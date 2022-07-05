@@ -6,15 +6,19 @@ import { AppComponent } from './app.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
 import { ProductComponent } from './shared/product/product.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
 
-    UserProfileComponent
+    UserProfileComponent,
 
-    ProductComponent
+    ProductComponent,
+      LoginComponent,
+      SignupComponent
 
   ],
   imports: [
