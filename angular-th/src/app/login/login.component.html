@@ -1,28 +1,40 @@
 <div class="form-container mat-elevation-z5">
-    <h1>Login</h1>
-<form>
+    <h1>Welcome back user</h1>
+<form #LoginForm="ngForm" (ngSubmit)="submit(LoginForm.value)">
     <div>
         <mat-form-field>
-            <input matInput 
+            <input matInput
+            type="email"
+            ngModel
             placeholder="Email address" 
-            formControlName="email" />
+            name="email"
+            required
+            />
+           
         </mat-form-field>
     </div>
     <div>
       <mat-form-field>
             <input matInput type="password" 
             placeholder="Password" 
-            formControlName="password" />       
+            ngModel
+            name="password"
+            required
+           
+            /> 
+                
       </mat-form-field>
     </div>
     <div class="center margin-top">
         <button type="submit" mat-raised-button color="primary">Login</button>
     </div>
+
+    
       <span class="center margin-top">New user? Sign up below</span>
     <div class="center margin-top">
-        <button mat-raised-button color ="primary">
+       <a routerLink="/signup"> <button mat-raised-button color ="primary">
             Signup
-        </button>
+        </button></a>
     </div>
-    </form>
+</form> 
   </div>
