@@ -1,0 +1,72 @@
+<div class="form-container mat-elevation-z5">
+    <h1>Please enter information below</h1>
+    <form >
+    <div>
+     
+        <mat-form-field >
+            <input matInput 
+            placeholder="First Name" 
+            formControlName="firstName" />
+        </mat-form-field>
+    
+        <mat-form-field>
+            <input matInput 
+            placeholder="Last Name " 
+            formControlName="lastName" />
+        </mat-form-field>
+   
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput 
+        placeholder="Email address" 
+        formControlName="email" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput type="password" 
+        placeholder="Password" 
+        formControlName="password" />       
+      </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+          <input matInput type="password" 
+          placeholder="Re-enter Password" 
+          formControlName="confirmPassword" />       
+        </mat-form-field>
+    </div>
+    
+      
+      <div>
+        <mat-form-field>
+          <input matInput 
+          placeholder="Username" 
+          formControlName="username" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput 
+          placeholder="Phone Number" 
+          formControlName="phone" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput 
+          placeholder="Zipcode" 
+          formControlName="zipcode" />
+        </mat-form-field>
+      </div>
+      
+    <span class="center margin-top">Already have an account login click below</span>
+      <div class="center margin-top">
+        <a routerLink="/login"><button mat-raised-button color="primary">
+           login
+            </button>
+        </a>
+      </div>
+    </form>
+  </div>
