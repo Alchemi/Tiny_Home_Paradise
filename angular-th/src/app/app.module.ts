@@ -1,4 +1,3 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
@@ -9,6 +8,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
+
+/* Routing */
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -26,9 +28,38 @@ import { HomeComponent } from './home/home.component';
 import { HotToastModule } from '@ngneat/hot-toast';
 
 
+/* Angular Material */
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularMaterialModule } from './angular-material.module';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
+/* FormsModule */
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+/* Angular Flex Layout */
+import { FlexLayoutModule } from "@angular/flex-layout";
+
+/* Components 
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';  */
+
+
 @NgModule({
   declarations: [
     AppComponent,
+
+  /*  LoginComponent,
+    RegisterComponent,   */
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    AngularMaterialModule,
+    ReactiveFormsModule,
+    FormsModule,
+    FlexLayoutModule
+
 
     UserProfileComponent,
 
@@ -54,8 +85,11 @@ import { HotToastModule } from '@ngneat/hot-toast';
     provideFirestore(() => getFirestore()),
     BrowserAnimationsModule,
     HotToastModule.forRoot()
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
+
 export class AppModule { }

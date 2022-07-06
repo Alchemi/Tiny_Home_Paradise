@@ -1,3 +1,14 @@
+<!-- Toolbar -->
+<mat-toolbar color="primary" class="app-header">
+  <div>Anime SQL </div>
+  <span class="nav-tool-items">
+    <a mat-button routerLink="login" routerLinkActive="active">Log in</a>
+    <a mat-button mat-raised-button routerLink="register" routerLinkActive="active">Register</a>
+  </span>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+
 <mat-toolbar color="primary">
     <h5>Languages</h5>
     <h3 class="THP">THP</h3>
@@ -12,3 +23,4 @@
 <div class="content">
 <router-outlet></router-outlet>
 </div>
+
