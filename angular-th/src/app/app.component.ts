@@ -5,9 +5,12 @@ import { AuthenticationService } from './services/authentication.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  title = 'cev';
+
   constructor(public authService: AuthenticationService, private router:Router){}
 
   logout(){
