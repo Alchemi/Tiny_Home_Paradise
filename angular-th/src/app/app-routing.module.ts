@@ -1,3 +1,5 @@
+
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { FullscreenOverlayContainer } from '@angular/cdk/overlay';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -36,10 +38,14 @@ const routes: Routes = [
     path: 'users/:id', 
     component: UserProfileComponent
   }
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
+
 export class AppRoutingModule { }
+

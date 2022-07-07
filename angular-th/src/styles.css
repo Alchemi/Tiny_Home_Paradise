@@ -8,12 +8,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     max-width: 300px;
     margin: auto;
   
-    background: #eceff1;
+    background: white;
     padding: 48px;
     border-radius: 16px;
   
 }
-  
+ 
   .center {
     display: flex;
     justify-content: center;

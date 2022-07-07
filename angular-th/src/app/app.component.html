@@ -1,10 +1,22 @@
-<mat-toolbar color="primary">
+
+<mat-toolbar color="white">
     <h5>Languages</h5>
     <h3 class="THP">THP</h3>
-    <button mat-button routerLink="login">Sign in</button>
+    <ng-container *ngIf="authService.currentUser$ | async as user; else loginButton">
+    <button mat-button (click)="logout()">Logout</button>
+    </ng-container>
+    <ng-template #loginButton>
+        <button mat-button routerLink="login">Sign in</button>
+    </ng-template>
+    
 </mat-toolbar>
 <div class="content">
 <router-outlet></router-outlet>
 
 </div>
+
+
+
+</div>
 <app-footer></app-footer>
+
