@@ -38,6 +38,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { Router, RouterModule } from '@angular/router';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -57,18 +58,8 @@ import { Router, RouterModule } from '@angular/router';
     HomeComponent,
     ContactComponent,
     FooterComponent,
-
-
-
-
-      ProductComponent,
-      UserProfileComponent,
-      AboutComponent,
-      LoginComponent,
-      SignupComponent,
-      HomeComponent,
-      ContactComponent,
-      FooterComponent
+    UserProfileComponent,
+    SearchComponent
 
 
 
