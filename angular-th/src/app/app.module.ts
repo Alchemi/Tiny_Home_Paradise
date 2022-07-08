@@ -49,6 +49,7 @@ import { Router, RouterModule } from '@angular/router';
 
 
       ProductComponent,
+      UserProfileComponent,
       AboutComponent,
       LoginComponent,
       SignupComponent,
