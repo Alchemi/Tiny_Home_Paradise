@@ -1,0 +1,42 @@
+<mat-toolbar>
+    <h5>Languages</h5>
+    <a routerLink=""><img src="./assets/images/THP logo.png" alt="TinyHomeParadise logo"></a>
+    <div class="navbar-bottom">
+        <ul class="navbar-list">
+
+          <li>
+            <a href="#home" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li>
+            <a href="#about" class="navbar-link" data-nav-link>About</a>
+          </li>
+
+          <li>
+            <a href="#service" class="navbar-link" data-nav-link>Service</a>
+          </li>
+
+          <li>
+            <a href="#property" class="navbar-link" data-nav-link>Property</a>
+          </li>
+
+          <li>
+            <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+          </li>
+
+          <li>
+            <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
+          </li>
+
+        </ul>
+      </div>
+
+    
+    <ng-container *ngIf="authService.currentUser$ | async as user; else loginButton">
+    <button mat-button (click)="logout()">Logout</button>
+    </ng-container>
+    <ng-template #loginButton>
+        <button mat-button routerLink="login">Sign in</button>
+    </ng-template>
+    
+</mat-toolbar>
