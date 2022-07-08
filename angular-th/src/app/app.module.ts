@@ -19,6 +19,7 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
 import { HotToastModule } from '@ngneat/hot-toast';
 
 
@@ -31,8 +32,9 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 /* Angular Flex Layout */
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { FooterComponent } from './footer/footer.component';
 
-import { FooterComponent } from './shared/footer/footer.component';
+
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { Router, RouterModule } from '@angular/router';
@@ -45,16 +47,15 @@ import { Router, RouterModule } from '@angular/router';
     LoginComponent,
     SignupComponent,
     HomeComponent,
-
-
-
-      ProductComponent,
-      AboutComponent,
-      LoginComponent,
-      SignupComponent,
-      HomeComponent,
-      ContactComponent,
-      FooterComponent
+    HeaderComponent,
+    FooterComponent,
+    ProductComponent,
+    AboutComponent,
+    LoginComponent,
+    SignupComponent,
+    HomeComponent,
+    ContactComponent,
+    FooterComponent
 
 
   ],
