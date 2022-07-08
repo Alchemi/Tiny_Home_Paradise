@@ -34,6 +34,10 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { FooterComponent } from './footer/footer.component';
 
+import { FooterComponent } from './shared/footer/footer.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { Router, RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -47,9 +51,20 @@ import { FooterComponent } from './footer/footer.component';
     FooterComponent
 
 
+
+      ProductComponent,
+      AboutComponent,
+      LoginComponent,
+      SignupComponent,
+      HomeComponent,
+      ContactComponent,
+      FooterComponent
+
+
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularMaterialModule,

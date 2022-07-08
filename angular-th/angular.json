@@ -96,6 +96,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "angular-th:build:production",
+            "firebaseProject": "tinyhomedevelopmentp3",
+            "firebaseHostingSite": "tinyhomedevelopmentp3"
+          }
         }
       }
     }
