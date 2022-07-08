@@ -9,6 +9,7 @@ import { SignupComponent } from './signup/signup.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ProductComponent } from './shared/product/product.component';
 
 
 const routes: Routes = [
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'profile', 
     component: UserProfileComponent
+  },
+  {
+    path: 'product',
+    component: ProductComponent
   }
 
 ];
