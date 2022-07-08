@@ -11,11 +11,8 @@ export class AppComponent {
 
   title = 'cev';
 
-  constructor(public authService: AuthenticationService, private router:Router){}
+  constructor(){}
 
-  logout(){
-    this.authService.logout().subscribe(()=>{
-      this.router.navigate(['']);
-    });
-  }
+  
+  
 }
