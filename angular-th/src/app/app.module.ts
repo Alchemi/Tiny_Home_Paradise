@@ -56,7 +56,7 @@ import { Router, RouterModule } from '@angular/router';
     SignupComponent,
     HomeComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
 
 
 
