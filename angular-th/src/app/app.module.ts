@@ -47,6 +47,7 @@ import { Router, RouterModule } from '@angular/router';
     LoginComponent,
     SignupComponent,
     HomeComponent,
+
     HeaderComponent,
     FooterComponent,
     ProductComponent,
@@ -56,6 +57,19 @@ import { Router, RouterModule } from '@angular/router';
     HomeComponent,
     ContactComponent,
     FooterComponent
+
+
+
+
+      ProductComponent,
+      UserProfileComponent,
+      AboutComponent,
+      LoginComponent,
+      SignupComponent,
+      HomeComponent,
+      ContactComponent,
+      FooterComponent
+
 
 
   ],
