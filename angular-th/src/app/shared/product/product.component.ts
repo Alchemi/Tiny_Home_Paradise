@@ -11,5 +11,8 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  searchText:string = '';
+  onSearchTextEntered(searchValue:string){
+    this.searchText = searchValue;
+  }
 }
