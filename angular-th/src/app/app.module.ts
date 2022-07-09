@@ -39,6 +39,11 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { Router, RouterModule } from '@angular/router';
 import { SearchComponent } from './search/search.component';
+import { AddPropertyComponent } from './shared/add-property/add-property.component';
+
+import { ListingsComponent } from './shared/listings/listings.component';
+import { PropertyDetailsComponent } from './shared/property-details/property-details.component';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 
 @NgModule({
@@ -59,7 +64,10 @@ import { SearchComponent } from './search/search.component';
     ContactComponent,
     FooterComponent,
     UserProfileComponent,
-    SearchComponent
+    SearchComponent,
+    AddPropertyComponent,
+    ListingsComponent,
+    PropertyDetailsComponent
 
 
 
@@ -84,7 +92,7 @@ import { SearchComponent } from './search/search.component';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
