@@ -15,5 +15,11 @@ export class ListingsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  searchText:string = '';
+
+  onSearchTextEntered(searchValue:string){
+    this.searchText = searchValue;
+    console.log(this.searchText)
+  }
 
 }

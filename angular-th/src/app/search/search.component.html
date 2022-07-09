@@ -1,6 +1,8 @@
 <mat-card  class="container mt-4">
     <div class="row  search">
+        
       <span>Search:</span>
-      <input type="text" placeholder="Zipcode" [ngModel]="enteredSearchValue" (input)="onSearchTextChanged()">
+      <input type="text" placeholder="Zipcode" [(ngModel)]="enteredSearchValue" (input)="onSearchTextChanged()">
+        
     </div>
 </mat-card>
