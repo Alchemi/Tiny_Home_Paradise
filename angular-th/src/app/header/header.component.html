@@ -15,7 +15,7 @@
          
 
           <li>
-            <a href="#property" class="navbar-link" data-nav-link>Property</a>
+            <a class="navbar-link" routerLink="product">Property</a>
           </li>
 
          
@@ -29,10 +29,18 @@
 
     
     <ng-container *ngIf="authService.currentUser$ | async as user; else loginButton">
-    <button mat-button (click)="logout()">Logout</button>
+    <button mat-button [matMenuTriggerFor]="userMenu">
+        <mat-icon>account_circle</mat-icon>
+        Account
+        <mat-icon>expand_more</mat-icon>
+    </button>
     </ng-container>
     <ng-template #loginButton>
         <button mat-button routerLink="login">Sign in</button>
     </ng-template>
     
 </mat-toolbar>
+<mat-menu #userMenu="matMenu">
+    <button mat-menu-item (click)="logout()">Logout</button>
+    <button mat-menu-item routerLink="profile">Profile</button>
+</mat-menu>
