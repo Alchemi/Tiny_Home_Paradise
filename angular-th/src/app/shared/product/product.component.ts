@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+
 import { Product } from 'app/model/product';
 import { menuList } from 'app/helpers/menuList';
 
@@ -40,6 +41,9 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  
+
 
   getAllProducts() {
     this.data.getAllProducts().subscribe(res =>{
@@ -98,4 +102,5 @@ export class ProductComponent implements OnInit {
     this.data.deleteProduct(product);
     }
   }
+
 }

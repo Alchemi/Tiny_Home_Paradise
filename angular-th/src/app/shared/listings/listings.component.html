@@ -1,4 +1,4 @@
-<app-search></app-search>
+<app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
 <!-- <div class= "search ">
     <label for= "search">
     <svg class="icon icon-search">
@@ -15,6 +15,7 @@
 </div>
 <div class="listings">
  <div class="listing element" *ngFor="let item of propertiesList ">
+    <div class="listing element" *ngIf="searchText ===''|| item.location.includes(searchText)">
    <div class = "listing_description ">
     <div class = "listing_heading">
      <h4 class="heading-4 ">{{ item.house_name }}</h4>
@@ -34,5 +35,6 @@
     <span class= "mobile">{{ item.mobile }}</span>
    </div>
   </div>
+    </div>
  </div>
 </div>
