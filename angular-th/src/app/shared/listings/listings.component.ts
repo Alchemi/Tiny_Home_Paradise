@@ -18,6 +18,10 @@ export class ListingsComponent implements OnInit {
   zipcodeText:string = '';
   minText:number =0;
   maxText:number =0;
+  minSizeText:number =0;
+  maxSizeText:number =0;
+  bedroomText:number =0;
+  bathroomText:number =0;
 
   onSearchZipcodeEntered(searchValue:string){
     this.zipcodeText = searchValue;
@@ -30,6 +34,22 @@ export class ListingsComponent implements OnInit {
   onSearchMaxEntered(searchValue:number){
     this.maxText = searchValue;
     console.log(this.maxText)
+  }
+  onSearchMinSizeEntered(searchValue:number){
+    this.minSizeText = searchValue;
+    console.log(this.minSizeText)
+  }
+  onSearchMaxSizeEntered(searchValue:number){
+    this.maxSizeText = searchValue;
+    console.log(this.maxSizeText)
+  }
+  onBedroomEntered(searchValue:number){
+    this.bedroomText = searchValue;
+    console.log(this.bedroomText);
+  }
+  onBathroomEntered(searchValue:number){
+    this.bathroomText = searchValue;
+    console.log(this.bathroomText);
   }
 
 }
