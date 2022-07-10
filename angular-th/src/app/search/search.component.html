@@ -8,6 +8,27 @@
         <input placeholder="Min" [(ngModel)]="enteredMinPrice"  (input)="onSearchMinChanged()">
         to
         <input placeholder="Max" [(ngModel)]="enteredMaxPrice" (input)="onSearchMaxChanged()">
-    </span> 
+      </span>
+      <span>Square Foot</span>
+      <span>
+        <input placeholder="Min" [(ngModel)]="enteredMinSize"  (input)="onSearchMinSizeChanged()">
+        to
+        <input placeholder="Max" [(ngModel)]="enteredMaxSize" (input)="onSearchMaxSizeChanged()">
+    </span>
+    <span for="bedrms">Bedrooms</span>
+    <select id="bedrms" [(ngModel)]="enteredBedroom" (mouseleave)="onBedChanged()">
+        <option  value =0 selected>Any</option>
+        <option  value =1>1</option>
+        <option  value=2>2</option>
+        <option  value =3>3</option>
+        <option  value=4>4</option>
+    </select>
+    <span for="bthrms">Bathrooms</span>
+    <select id="bthrms" [(ngModel)]="enteredBathroom" (mouseleave)="onBathChanged()">
+        <option value=0>Any</option>
+        <option  value=1>1</option>
+        <option value=2>2</option>
+    </select>
     </div>
+   
 </mat-card>
