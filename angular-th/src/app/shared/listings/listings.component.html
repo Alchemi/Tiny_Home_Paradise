@@ -1,4 +1,6 @@
-<app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
+<app-search (searchZipcodeChanged)="onSearchZipcodeEntered($event)"
+(searchMinChanged)="onSearchMinEntered($event)"
+(searchMaxChanged)="onSearchMaxEntered($event)"></app-search>
 <!-- <div class= "search ">
     <label for= "search">
     <svg class="icon icon-search">
@@ -15,26 +17,28 @@
 </div>
 <div class="listings">
  <div class="listing element" *ngFor="let item of propertiesList ">
-    <div class="listing element" *ngIf="searchText ===''|| item.location.includes(searchText)">
-   <div class = "listing_description ">
-    <div class = "listing_heading">
-     <h4 class="heading-4 ">{{ item.house_name }}</h4>
-     <span class="dash ">&mdash; </span>
-     <span class = "type "> {{ item.location }}</span>
-    </div>
-    <div class= "listing_info">
-     <span> {{item.rooms }} bedrooms</span>
-    <span class= "cirlce">&#11044; </span>
-        <span>{{ item.baths }} bathrooms</span>
-    <span class= "cirlce">&#11044; </span>
-        <span> {{ item.size }}</span>
-    </div>
- <div class= "listing_footer">
-    <span class= "price">{{ item.price }}</span>
-    <span class= "year">{{ item.year}}</span>
-    <span class= "mobile">{{ item.mobile }}</span>
-   </div>
-  </div>
+    <div class="listing element" *ngIf="zipcodeText ===''|| item.location.includes(zipcodeText)">
+    <div *ngIf="(minText===0|| maxText===0)||(item.price>=minText && item.price<=maxText)">
+         <div class = "listing_description ">
+            <div class = "listing_heading">
+                <h4 class="heading-4 ">{{ item.house_name }}</h4>
+                <span class="dash ">&mdash; </span>
+                <span class = "type "> {{ item.location }}</span>
+            </div>
+            <div class= "listing_info">
+                <span> {{item.rooms }} bedrooms</span>
+                <span class= "cirlce">&#11044; </span>
+                <span>{{ item.baths }} bathrooms</span>
+                <span class= "cirlce">&#11044; </span>
+                <span> {{ item.size }}</span>
+            </div>
+            <div class= "listing_footer">
+                <span class= "price">{{ item.price }}</span>
+                <span class= "year">{{ item.year}}</span>
+                <span class= "mobile">{{ item.mobile }}</span>
+            </div>
+         </div>
+        </div>
     </div>
  </div>
 </div>

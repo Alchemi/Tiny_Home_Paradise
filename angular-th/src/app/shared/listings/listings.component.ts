@@ -15,11 +15,21 @@ export class ListingsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  searchText:string = '';
+  zipcodeText:string = '';
+  minText:number =0;
+  maxText:number =0;
 
-  onSearchTextEntered(searchValue:string){
-    this.searchText = searchValue;
-    console.log(this.searchText)
+  onSearchZipcodeEntered(searchValue:string){
+    this.zipcodeText = searchValue;
+    console.log(this.zipcodeText)
+  }
+  onSearchMinEntered(searchValue:number){
+    this.minText = searchValue;
+    console.log(this.minText)
+  }
+  onSearchMaxEntered(searchValue:number){
+    this.maxText = searchValue;
+    console.log(this.maxText)
   }
 
 }
