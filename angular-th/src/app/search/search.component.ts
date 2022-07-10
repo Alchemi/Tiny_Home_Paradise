@@ -12,13 +12,24 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  enteredSearchValue:string ='';
+  enteredZipcode:string ='';
+  enteredMinPrice:number=0;
+  enteredMaxPrice:number=0;
 
   @Output()
-  searchTextChanged : EventEmitter<string> = new EventEmitter<string>();
-
-  onSearchTextChanged(){
-    this.searchTextChanged.emit(this.enteredSearchValue);
+  searchZipcodeChanged : EventEmitter<string> = new EventEmitter<string>();
+  @Output()
+  searchMinChanged : EventEmitter<number> = new EventEmitter<number>();
+  @Output()
+  searchMaxChanged : EventEmitter<number> = new EventEmitter<number>();
+  onSearchZipcodeChanged(){
+    this.searchZipcodeChanged.emit(this.enteredZipcode); 
+  }
+  onSearchMinChanged(){
+    this.searchMinChanged.emit(this.enteredMinPrice); 
+  }
+  onSearchMaxChanged(){
+    this.searchMaxChanged.emit(this.enteredMaxPrice); 
   }
 
 }
