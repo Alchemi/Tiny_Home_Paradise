@@ -1,23 +1,21 @@
-
-
 <div class= "main">
 
   <div class= "user">
     <div class= "notification ">
       <svg class="icon icon-bell ">
-        <use href="./assets/icons . svg#icon-bell"></use>
+        <use href="./assets/icons.svg#icon-bell"></use>
       </svg>
-      <span class= "noti fication_ circle circle-active"></span>
+      <span class= "notification_circle circle-active"></span>
     </div>
     <div class="user_info">
       <div class="circle-avatar">
-        <img src="./assets/images/illustration. jpg" alt="" />
+        <img src="./assets/images/Jiro Inagaki.jpg" alt="" />
       </div>
       <div class= "user-name "> David 0.</div>
     </div>
     <div class="dropdown">
-      <svg class= "icon icon-down ">
-        <use href="./assets/icons .svg#icon-chevron -small-down "></use>
+      <svg class= "icon icon-chevron-small-double-down ">
+        <use href="./assets/icons.svg#icon-chevron-double-down "></use>
       </svg>
     </div>
   </div>
@@ -27,18 +25,19 @@
     </div>
     <ul class ="nav">
         
-      <!-- <li class="nav__item" *ngFor="let menu of menuList"
+       <li class="nav__item" *ngFor="let menu of menuList"
       >
-         <svg (click)="icon {{menu.icon}}"> 
-          <use attr.xlink.href=""></use>
+        <svg class="icon {{ menu.icon }}"> 
+          <use attr.xlink.href="./assets/icons.svg#{{ menu.icon }}"></use>
         </svg>
-        <a class="nav__link"></a>
-      </li> -->
+        <a class="nav__link">{{menu.name}}</a>
+      </li>  
     </ul>
   
   </nav>
  
   <router-outlet></router-outlet>
-  <div class="details"></div>
-  <router-outlet name="d"></router-outlet>
+  <div class="property-details">
+    <router-outlet name="d"></router-outlet>
+  </div>
 </div>

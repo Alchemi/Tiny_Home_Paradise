@@ -14,7 +14,7 @@
  </div>
 </div>
 <div class="listings">
- <div class="listing element" *ngFor="let item of propertiesList ">
+ <div class="listing element" *ngFor="let item of pList ">
     <div class="listing element" *ngIf="searchText ===''|| item.location.includes(searchText)">
    <div class = "listing_description ">
     <div class = "listing_heading">
@@ -24,17 +24,19 @@
     </div>
     <div class= "listing_info">
      <span> {{item.rooms }} bedrooms</span>
-    <span class= "cirlce">&#11044; </span>
+    <span class= "circle">&#11044; </span>
         <span>{{ item.baths }} bathrooms</span>
-    <span class= "cirlce">&#11044; </span>
-        <span> {{ item.size }}</span>
+    <span class= "circle">&#11044; </span>
+        <span> {{ item.size }} sq ft</span>
     </div>
  <div class= "listing_footer">
-    <span class= "price">{{ item.price }}</span>
+    <span class= "price">${{ item.price }}</span>
     <span class= "year">{{ item.year}}</span>
-    <span class= "mobile">{{ item.mobile }}</span>
+    <span class= "mobile">{{ item.mobility }}</span>
    </div>
   </div>
     </div>
  </div>
 </div>
+
+<app-property-details></app-property-details>

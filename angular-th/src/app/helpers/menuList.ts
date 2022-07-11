@@ -1,6 +1,6 @@
 import { Menu } from "../model/menu";
 
-export const menuList: Menu[] =[
+export const menuList: Menu[] =[ //POTENTIALLY SHIFTING ALL OF MENU TO SEARCH AND SEARCH FILTERS
 {
     name: 'Home',
     link: '/',
@@ -8,9 +8,9 @@ export const menuList: Menu[] =[
 },
 
 {
-    name: 'Data',
-    link: '/data',
-    icon: 'icon-circular-graph',
+    name: 'Sell a Home',
+    link: '/add-property',
+    icon: 'icon-circular-graph', //CHANGE THIS TO A MORE FITTING ICON
 },
 
 {
@@ -19,16 +19,10 @@ export const menuList: Menu[] =[
     icon: 'icon-list',
 },
 
-{
-    name: 'Clients',
-    link:'/clients',
-    icon: 'icon-user',
-},
-
-{
-    name:'Settings',
-    link: '/settings',
-    icon: 'icon-cog'
-},
+// {                            MAYBE USE PROFILE IN SIDE BAR
+//     name:'Profile',
+//     link: '/user-profile',
+//     icon: 'icon-user'
+// },
 
 ];
