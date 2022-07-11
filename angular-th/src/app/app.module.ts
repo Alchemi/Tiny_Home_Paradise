@@ -10,7 +10,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ProductComponent } from './shared/product/product.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
@@ -21,6 +20,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { HotToastModule } from '@ngneat/hot-toast';
+import { provideStorage, getStorage } from '@angular/fire/storage';
 
 
 
@@ -46,14 +46,17 @@ import { ListingsComponent } from './shared/listings/listings.component';
 import { PropertyDetailsComponent } from './shared/property-details/property-details.component';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
+import { ProfileComponent } from './profile/profile.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserProfileComponent,
     LoginComponent,
     SignupComponent,
     HomeComponent,
+    ProfileComponent,
 
     HeaderComponent,
     FooterComponent,
@@ -64,11 +67,15 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
     HomeComponent,
     ContactComponent,
     FooterComponent,
+
     UserProfileComponent,
     SearchComponent,
     AddPropertyComponent,
     ListingsComponent,
     PropertyDetailsComponent
+
+    SearchComponent
+
 
 
 
@@ -92,6 +99,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
+    provideStorage(()=>getStorage()),
   ],
   providers: [AngularFirestore],
   bootstrap: [AppComponent],
