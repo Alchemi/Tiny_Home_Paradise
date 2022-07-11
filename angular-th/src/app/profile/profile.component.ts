@@ -3,8 +3,10 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { HotToastService } from '@ngneat/hot-toast';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { switchMap, tap } from 'rxjs';
-import { ProfileUser } from 'src/app/models/user';
-import { ImageUploadService } from 'src/app/services/image-upload.service';
+
+import { ProfileUser } from 'app/models/user';
+import { ImageUploadService } from 'app/services/image-upload.service';
+
 import { UsersService } from '../services/user-services.service';
 @UntilDestroy()
 @Component({
