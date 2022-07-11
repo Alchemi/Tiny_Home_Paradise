@@ -1,25 +1,27 @@
 import { Injectable } from '@angular/core';
 import { Firestore, collection, doc, addDoc, getDocs } from '@angular/fire/firestore';
-
+import { environment } from 'environments/environment';
 import { Product } from '../model/product';
 
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class DataService {
 
   constructor(private afs : Firestore) { }
-
+  dbInstance = collection(this.afs, 'products');
+  
   // add property
   addProduct(value:any){
-    const dbInstance = collection(this.afs, 'products');
-    return addDoc(dbInstance, value);
+    
+    return addDoc(this.dbInstance, value);
   }
 
-
+  
   getProperties() {
-    return getDocs(collection(this.afs, 'products'));
+    return getDocs(this.dbInstance)
  }
  
   // get all prodcuts
