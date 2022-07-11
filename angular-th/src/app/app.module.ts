@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -19,7 +19,8 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
-import { HotToastModule } from '@ngneat/hot-toast';
+
+
 import { provideStorage, getStorage } from '@angular/fire/storage';
 
 
@@ -38,7 +39,7 @@ import { FooterComponent } from './footer/footer.component';
 
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { Router, RouterModule } from '@angular/router';
+
 import { SearchComponent } from './search/search.component';
 import { AddPropertyComponent } from './shared/add-property/add-property.component';
 
@@ -83,14 +84,13 @@ import { ProfileComponent } from './profile/profile.component';
   ],
   imports: [
     BrowserModule,
-    RouterModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
     ReactiveFormsModule,
     FormsModule,
     FlexLayoutModule,
-    
+    HttpClientModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
