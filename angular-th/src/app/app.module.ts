@@ -10,7 +10,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ProductComponent } from './shared/product/product.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
@@ -21,6 +20,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { HotToastModule } from '@ngneat/hot-toast';
+import { provideStorage, getStorage } from '@angular/fire/storage';
 
 
 /* Angular Material */
@@ -39,15 +39,16 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { Router, RouterModule } from '@angular/router';
 import { SearchComponent } from './search/search.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserProfileComponent,
     LoginComponent,
     SignupComponent,
     HomeComponent,
+    ProfileComponent,
 
     HeaderComponent,
     FooterComponent,
@@ -58,7 +59,6 @@ import { SearchComponent } from './search/search.component';
     HomeComponent,
     ContactComponent,
     FooterComponent,
-    UserProfileComponent,
     SearchComponent
 
 
@@ -83,6 +83,7 @@ import { SearchComponent } from './search/search.component';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
+    provideStorage(()=>getStorage()),
   ],
   providers: [],
   bootstrap: [AppComponent],
