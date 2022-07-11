@@ -45,8 +45,8 @@ import { AddPropertyComponent } from './shared/add-property/add-property.compone
 import { ListingsComponent } from './shared/listings/listings.component';
 import { PropertyDetailsComponent } from './shared/property-details/property-details.component';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-
 import { ProfileComponent } from './profile/profile.component';
+
 
 
 
@@ -57,6 +57,7 @@ import { ProfileComponent } from './profile/profile.component';
     SignupComponent,
     HomeComponent,
     ProfileComponent,
+    
 
     HeaderComponent,
     FooterComponent,
@@ -68,11 +69,11 @@ import { ProfileComponent } from './profile/profile.component';
     ContactComponent,
     FooterComponent,
 
-    UserProfileComponent,
+    
     SearchComponent,
     AddPropertyComponent,
     ListingsComponent,
-    PropertyDetailsComponent
+    PropertyDetailsComponent,
 
     SearchComponent
 
