@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { catchError } from 'rxjs';
+import { __values } from 'tslib';
 import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
@@ -24,7 +25,7 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
   submit(value:any){
     if(value.password !== value.confirmPassword){
       return (alert("Passwords must match!!"));
