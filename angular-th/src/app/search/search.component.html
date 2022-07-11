@@ -1,57 +1,34 @@
 <mat-card  class="container mt-4">
     <div class="row  search">
-      <div class="col-sm-6 col-lg-2">
-        <mat-form-field >
-          <input type="search"matInput [matAutocomplete]="auto"
-           
-           >
-          <mat-autocomplete #auto="matAutocomplete">
-          <mat-option >
-            
-          </mat-option>
-          </mat-autocomplete>
-        </mat-form-field>
-        </div>
-        <div class="col-sm-6 col-lg-2">
-        <mat-form-field>
-          <input type="search"matInput [matAutocomplete]="types"
-         
-         >
-          <mat-autocomplete #types="matAutocomplete">
-          <mat-option  >
-           
-          </mat-option>
-          </mat-autocomplete>
-        </mat-form-field>  
-      </div>
-      <div class="col-sm-6 col-lg-2">
-      <mat-form-field>
-        <input type="text"matInput 
-     >
-      </mat-form-field>  
-      </div>
-      <div class="col-sm-6 col-lg-2">
-        <mat-form-field>
-          <input matInput 
-          >
-        </mat-form-field>
+        
+      <span>Zipcode:</span>
+      <input type="text" placeholder="Zipcode" [(ngModel)]="enteredZipcode" (input)="onSearchZipcodeChanged()">
+      <span>Price</span>
+      <span>
+        <input placeholder="Min" [(ngModel)]="enteredMinPrice"  (input)="onSearchMinChanged()">
+        to
+        <input placeholder="Max" [(ngModel)]="enteredMaxPrice" (input)="onSearchMaxChanged()">
+      </span>
+      <span>Square Foot</span>
+      <span>
+        <input placeholder="Min" [(ngModel)]="enteredMinSize"  (input)="onSearchMinSizeChanged()">
+        to
+        <input placeholder="Max" [(ngModel)]="enteredMaxSize" (input)="onSearchMaxSizeChanged()">
+    </span>
+    <span for="bedrms">Bedrooms</span>
+    <select id="bedrms" [(ngModel)]="enteredBedroom" (mouseleave)="onBedChanged()">
+        <option  value =0 selected>Any</option>
+        <option  value =1>1</option>
+        <option  value=2>2</option>
+        <option  value =3>3</option>
+        <option  value=4>4</option>
+    </select>
+    <span for="bthrms">Bathrooms</span>
+    <select id="bthrms" [(ngModel)]="enteredBathroom" (mouseleave)="onBathChanged()">
+        <option value=0>Any</option>
+        <option  value=1>1</option>
+        <option value=2>2</option>
+    </select>
+    </div>
    
-      </div>
-      <div class="col-sm-12 col-lg-4 mt-lg-4 d-flex justify-content-center">
-        <mat-radio-group  color="primary">
-          <div class="d-flex justify-content-center sort-radio" >
-           Price:<mat-radio-button value="asc" class="sort">low-high</mat-radio-button>
-            <mat-radio-button value="des">high-low</mat-radio-button>
-          </div>       
-        </mat-radio-group>   
-      </div>
-    </div>
-    <div class="row d-flex justify-content-center mt-4 ">
-    <div    class="col col-md-3 col-lg-2">
-      <button mat-raised-button color="primary">Search<mat-icon class="field-icon">search</mat-icon> </button>
-    </div>
-    <div class="col col-md-3 col-lg-2" >
-      <button mat-raised-button color="primary">Clear Filters<mat-icon class="field-icon">filter_alt</mat-icon> </button>
-    </div>
-  </div>
 </mat-card>

@@ -23,6 +23,7 @@ import { HotToastModule } from '@ngneat/hot-toast';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 
 
+
 /* Angular Material */
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
@@ -39,7 +40,14 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { Router, RouterModule } from '@angular/router';
 import { SearchComponent } from './search/search.component';
+import { AddPropertyComponent } from './shared/add-property/add-property.component';
+
+import { ListingsComponent } from './shared/listings/listings.component';
+import { PropertyDetailsComponent } from './shared/property-details/property-details.component';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+
 import { ProfileComponent } from './profile/profile.component';
+
 
 
 @NgModule({
@@ -59,7 +67,15 @@ import { ProfileComponent } from './profile/profile.component';
     HomeComponent,
     ContactComponent,
     FooterComponent,
+
+    UserProfileComponent,
+    SearchComponent,
+    AddPropertyComponent,
+    ListingsComponent,
+    PropertyDetailsComponent
+
     SearchComponent
+
 
 
 
@@ -85,7 +101,7 @@ import { ProfileComponent } from './profile/profile.component';
     provideFirestore(() => getFirestore()),
     provideStorage(()=>getStorage()),
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

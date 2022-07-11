@@ -1,4 +1,3 @@
-
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { FullscreenOverlayContainer } from '@angular/cdk/overlay';
 import { NgModule } from '@angular/core';
@@ -10,6 +9,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ProductComponent } from './shared/product/product.component';
+import { ListingsComponent } from './shared/listings/listings.component';
+import { PropertyDetailsComponent } from './shared/property-details/property-details.component';
 
 
 const routes: Routes = [
@@ -40,8 +41,17 @@ const routes: Routes = [
     component: ProfileComponent
   },
   {
-    path: 'product',
+    path:'product',
     component: ProductComponent
+  },
+  {
+    path:'listings',
+    component: ListingsComponent
+  },
+  {
+    path: 'property-details/:id',
+    component: PropertyDetailsComponent,
+    outlet: 'd',
   }
 
 ];
