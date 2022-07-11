@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tinyhomedevelopmentp3": {
+      "hosting": {
+        "angular-th": [
+          "tinyhomedevelopmentp3"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tinyhomedevelopmentp3"
+  }
+}

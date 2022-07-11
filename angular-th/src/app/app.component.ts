@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from './services/authentication.service';
+import { menuList } from './helpers/menuList';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +12,8 @@ export class AppComponent {
 
   title = 'cev';
 
-  constructor(public authService: AuthenticationService, private router:Router){}
+  constructor(){}
 
-  logout(){
-    this.authService.logout().subscribe(()=>{
-      this.router.navigate(['']);
-    });
-  }
+  
+  
 }

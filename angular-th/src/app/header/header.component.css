@@ -1,0 +1,11 @@
+mat-toolbar{
+    justify-content: space-between;
+    background-color: white;
+    height: 9.8%;
+}
+h5{
+    font-size: small;
+}
+a:link{
+    text-decoration:none;
+}
