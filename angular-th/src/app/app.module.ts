@@ -47,11 +47,8 @@ import { ListingsComponent } from './shared/listings/listings.component';
 import { PropertyDetailsComponent } from './shared/property-details/property-details.component';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { ProfileComponent } from './profile/profile.component';
-<<<<<<< HEAD
-=======
 
 
->>>>>>> b68df318191822b8b2c3aa39bf30663882307a2f
 
 
 @NgModule({
@@ -61,11 +58,8 @@ import { ProfileComponent } from './profile/profile.component';
     SignupComponent,
     HomeComponent,
     ProfileComponent,
-<<<<<<< HEAD
-=======
     
 
->>>>>>> b68df318191822b8b2c3aa39bf30663882307a2f
     HeaderComponent,
     FooterComponent,
     ProductComponent,
@@ -75,22 +69,15 @@ import { ProfileComponent } from './profile/profile.component';
     HomeComponent,
     ContactComponent,
     FooterComponent,
-<<<<<<< HEAD
-=======
 
     
->>>>>>> b68df318191822b8b2c3aa39bf30663882307a2f
     SearchComponent,
     AddPropertyComponent,
     ListingsComponent,
     PropertyDetailsComponent,
-<<<<<<< HEAD
-    SearchComponent
-=======
 
     SearchComponent
 
->>>>>>> b68df318191822b8b2c3aa39bf30663882307a2f
 
 
 

@@ -1,8 +1,8 @@
 <mat-card  class="container mt-4">
     <div class="row  search">
         
-      <span>Zipcode:</span>
-      <input type="text" placeholder="Zipcode" [(ngModel)]="enteredZipcode" (input)="onSearchZipcodeChanged()">
+      <span>Location:</span>
+      <input type="text" placeholder="City, State, or Zipcode" [(ngModel)]="enteredZipcode" (input)="onSearchZipcodeChanged()">
       <span>Price</span>
       <span>
         <input placeholder="Min" [(ngModel)]="enteredMinPrice"  (input)="onSearchMinChanged()">
