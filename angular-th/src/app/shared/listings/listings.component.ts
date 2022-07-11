@@ -1,19 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Firestore, getDocs,collection } from '@angular/fire/firestore';
+import { Observable } from '@firebase/util';
 import { propertiesList } from 'app/helpers/propertiesList';
-
+import { subscribeOn } from 'rxjs';
+import { DataService } from '../data.service';
+import { Product } from 'app/model/product';
 
 @Component({
   selector: 'app-listings',
   templateUrl: './listings.component.html',
-  styleUrls: ['./listings.component.css']
+  styleUrls: ['./listings.component.scss'],encapsulation: ViewEncapsulation.ShadowDom
 })
 export class ListingsComponent implements OnInit {
 
-  propertiesList = propertiesList;
-
-  constructor() { }
-
-  ngOnInit(): void {
+  
+  
+  
+  
+  public data:any=[]
+  constructor(private afs : Firestore,) { 
+    this.getProperties();
+  }
+  
+ pList:Product[]=[];
+  
+ ngOnInit(): void {
+    this.getProperties();
   }
   zipcodeText:string = '';
   minText:number =0;
@@ -22,6 +34,22 @@ export class ListingsComponent implements OnInit {
   maxSizeText:number =0;
   bedroomText:number =0;
   bathroomText:number =0;
+  
+  dbInstance = collection(this.afs, 'products')
+  getProperties(){
+
+   getDocs(this.dbInstance)
+   .then((response) => {
+    this.data= [...response.docs.map((item) =>{
+      return {...item.data(), id: item.id}
+    })]
+    
+   })
+   
+  }
+
+
+  searchText:string = '';
 
   onSearchZipcodeEntered(searchValue:string){
     this.zipcodeText = searchValue;
@@ -52,4 +80,6 @@ export class ListingsComponent implements OnInit {
     console.log(this.bathroomText);
   }
 
+
+  
 }

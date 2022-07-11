@@ -1,68 +1,48 @@
-<app-search></app-search>
 <div class = "container-fluid">
     <div class ="row">
         <div class="col-md-4 mt-5">
-          <div class="card border-0 shadow p-3">
+          <form class="card border-0 shadow p-3" #addpropertyform="ngForm" (ngSubmit)="submit(addpropertyform.value)">
             <div class="form-floating mb-3 text-center">
               <h5 class="text-center text-warning">Add Property</h5>
             </div>
               <div class="form-floating mb-3">
-                  <input type="text" class="form-control" name="housename" placeholder="My Home" [(ngModel)]="house_name">
+                  <input type="text" class="form-control" name="house_name" placeholder="My Home" ngModel>
                   <label for="housename">Property Title</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" name="location" placeholder="Austin, TX, 78745" [(ngModel)]="location">
+                  <input type="text" class="form-control" name="location" placeholder="Austin, TX, 78745" ngModel>
                   <label for="location">Location</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="number" class="form-control" name="rooms" placeholder="0" [(ngModel)]="rooms">
+                  <input type="number" class="form-control" name="rooms" placeholder="0" ngModel>
                   <label for="rooms">Rooms</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="number" class="form-control" name="baths" placeholder="0" [(ngModel)]="baths">
+                  <input type="number" class="form-control" name="baths" placeholder="0" ngModel>
                   <label for="baths">Baths</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="number" class="form-control" name="price" placeholder="$250,000.00" [(ngModel)]="price">
+                  <input type="number" class="form-control" name="price" placeholder="$250,000.00" ngModel>
                   <label for="price">Price</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="number" class="form-control" name="size" placeholder="1,000 sq ft" [(ngModel)]="size">
+                  <input type="number" class="form-control" name="size" placeholder="1,000 sq ft" ngModel>
                   <label for="size">Size</label>
                 </div>
-                <button type="button" class="btn btn-outline-success"(click)="addProduct()">Add Property</button>
+                <div class="form-floating mb-3">
+                  <input type="number" class="form-control" name="year" placeholder="2000" ngModel>
+                  <label for="year">Year</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="string" class="form-control" name="mobility" placeholder="Yes" ngModel>
+                  <label for="mobility">Mobility</label>
+                </div>
+                <button type="submit" class="btn btn-outline-success">Add Property</button>
                 
-          </div>
+              </form>
         </div>
-        <div class ="col-md-8 mt-2">
-          <h5 class=""text-danger>Property List</h5>
-          <div class="card p-3 shadow">
-            <div class="card-body">
-              <table class="table table-hover table-dark table-striped">
-                <thead>
-                  <tr>
-                    <th scope="col">Price</th>
-                    <th scope="col">Property Title</th>
-                    <th scope="col">Location</th>
-                    <th scope="col">Seller</th>
-                    <th scope="col">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let product of productList">
-                    <td>{{product.price}}</td>
-                    <td>{{product.house_name}}</td>
-                    <td>{{product.location}}</td>
-                    <td>TBD</td>
-                    <td>
+        <!-- <td>
                       <button class="btn btn-outline-danger" (click)="deleteProduct(product)">Delete</button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-        </div>
+                    </td> -->
     </div>
 </div>
