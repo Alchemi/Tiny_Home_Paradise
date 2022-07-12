@@ -14,6 +14,10 @@ import { WishListComponent } from './shared/wish-list/wish-list.component';
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { canActivate, redirectUnauthorizedTo, redirectLoggedInTo} from '@angular/fire/auth-guard';
+
+const redirectToLogin = () => redirectUnauthorizedTo(['login']);
+const redirectToHome = () => redirectLoggedInTo(['']);
 
 const routes: Routes = [
   {
@@ -24,10 +28,12 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    ...canActivate(redirectToHome)
   },
   {
     path: 'signup',
-    component: SignupComponent
+    component: SignupComponent,
+    ...canActivate(redirectToHome)
   },
   {
     path:'about',
@@ -36,6 +42,7 @@ const routes: Routes = [
   {
     path: 'add-property',
     component: AddPropertyComponent,
+    ...canActivate(redirectToLogin)
   },
   {
     path:'contact',
@@ -44,7 +51,8 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent,
+    ...canActivate(redirectToLogin)
   },
   {
     path:'product',
@@ -52,7 +60,8 @@ const routes: Routes = [
   },
   {
     path:'listings',
-    component: ListingsComponent
+    component: ListingsComponent,
+    ...canActivate(redirectToLogin)
   },
  
 
@@ -60,10 +69,12 @@ const routes: Routes = [
     path: 'property-details/:id',
     component: PropertyDetailsComponent,
     outlet: 'd',
+    ...canActivate(redirectToLogin)
   },
   {
     path: 'wish-list',
     component: WishListComponent,
+    ...canActivate(redirectToLogin)
   },
  
 
