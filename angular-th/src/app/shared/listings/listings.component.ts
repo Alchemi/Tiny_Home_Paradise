@@ -97,6 +97,7 @@ export class ListingsComponent implements OnInit{
   maxSizeText:number =0;
   bedroomText:number =0;
   bathroomText:number =0;
+  keywordText:string='';
   
   dbInstance = collection(this.afs, 'products')
   getProperties(){
@@ -113,6 +114,10 @@ export class ListingsComponent implements OnInit{
 
 
   searchText:string = '';
+  onSearchKeywordEntered(searchValue:string){
+    this.keywordText=searchValue;
+    console.log(this.keywordText)
+  }
 
   onSearchZipcodeEntered(searchValue:string){
     this.zipcodeText = searchValue;

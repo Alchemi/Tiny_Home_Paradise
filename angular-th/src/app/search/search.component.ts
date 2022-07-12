@@ -19,6 +19,7 @@ export class SearchComponent implements OnInit {
   enteredMaxSize:number=0;
   enteredBedroom:number=0;
   enteredBathroom:number=0;
+  enteredKeyword:string='';
 
   @Output()
   searchZipcodeChanged : EventEmitter<string> = new EventEmitter<string>();
@@ -34,6 +35,11 @@ export class SearchComponent implements OnInit {
   searchBedChanged: EventEmitter<number> = new EventEmitter<number>();
   @Output()
   searchBathChanged: EventEmitter<number> = new EventEmitter<number>();
+  @Output()
+  searchKeywordChanged: EventEmitter<string> = new EventEmitter<string>();
+  onSearchKeywordChanged(){
+    this.searchKeywordChanged.emit(this.enteredKeyword);
+  }
   onSearchZipcodeChanged(){
     this.searchZipcodeChanged.emit(this.enteredZipcode); 
   }

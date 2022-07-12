@@ -60,7 +60,7 @@ export class AddPropertyComponent implements OnInit {
       let newProduct = {
         house_name: value.house_name,
           location: value.location,
-          
+          imageUrl:value.image,
           rooms : value.rooms,
           baths: value.baths,
           price: value.price,
