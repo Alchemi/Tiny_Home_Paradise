@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { EmailAuthCredential } from '@firebase/auth';
 import { catchError } from 'rxjs';
+
 import { __values } from 'tslib';
 import { AuthenticationService } from '../services/authentication.service';
 
@@ -10,6 +12,7 @@ import { AuthenticationService } from '../services/authentication.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+  msgError = "";
   newUser={
     email:String,
     firstName:String,
@@ -27,9 +30,12 @@ export class SignupComponent implements OnInit {
   }
   
   submit(value:any){
+    
     if(value.password !== value.confirmPassword){
-      return (alert("Passwords must match!!"));
+      this.msgError="Passwords must match!!"
+      return;
     }
+    
     let newUser={
       email: value.email,
       firstName:value.firstName,
@@ -48,7 +54,8 @@ export class SignupComponent implements OnInit {
       this.router.navigate(['']);
     });
     
+  
+   }
    
-
   }
-}
+
