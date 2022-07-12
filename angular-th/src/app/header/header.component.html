@@ -28,6 +28,16 @@
       </div>
 
     
+        <button class="button">
+        <i> 
+          <a class="list" routerLink="wish-list">
+        <img src="../../assets/images/list.png">
+          </a>
+      </i>
+        <!-- <span style="font-size: 10px;" class="badge bg-danger">5</span> -->
+        </button>
+
+    
     <ng-container *ngIf="authService.currentUser$ | async as user; else loginButton">
     <button mat-button [matMenuTriggerFor]="userMenu">
         <mat-icon>account_circle</mat-icon>

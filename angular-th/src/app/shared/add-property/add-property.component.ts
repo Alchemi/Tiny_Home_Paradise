@@ -13,6 +13,7 @@ export class AddPropertyComponent implements OnInit {
     newProduct ={
       house_name: String,
         location: String,
+        imageUrl: String,
         rooms : Number,
         baths: Number,
         price: Number,
@@ -59,6 +60,7 @@ export class AddPropertyComponent implements OnInit {
       let newProduct = {
         house_name: value.house_name,
           location: value.location,
+          
           rooms : value.rooms,
           baths: value.baths,
           price: value.price,

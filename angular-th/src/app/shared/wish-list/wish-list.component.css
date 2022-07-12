@@ -1,0 +1,96 @@
+.inner-form{
+    justify-content: space-around;
+    position: absolute;
+    bottom: 30%;
+    left: 10%;
+    }
+
+.button{
+    display: flex;
+    justify-content:space-around;
+
+}
+
+.btn {
+    position: relative;
+    background: var(--orange-soda);
+    color: var(--white);
+    font-family: var(--ff-poppins);
+    font-size: var(--fs-5);
+    text-transform: var(--text-transform, capitalize);
+    border: 1px solid var(--orange-soda);
+    padding: 5px 10px;
+    z-index: 1;
+  }
+
+  .btn:is(:hover, :focus) {
+    background: var(--black);
+    color: var(--dark-jungle-green);
+    border-color: var(--black);
+  }
+  
+  .btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--white);
+    transition: var(--transition);
+    z-index: -1;
+  }
+  
+  .btn:is(:hover, :focus)::before { width: 100%; }
+
+
+.center img{
+    text-decoration: none;
+    position:relative ; left:20px;
+    color: inherit;
+    border:none;
+    outline:none;
+    height: 220px;
+    width: 250px;
+    margin: 20px 0px;
+}
+
+h4,h6{
+    font-weight: 400;
+}
+.center{
+    top:50%;
+    left: 40%;
+    position:absolute;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+}
+
+.center .btn{
+    font-size: 14px !important;
+    margin-top: 20px !important;
+    font-weight: 400;
+    padding: 12px 72px;
+    border-radius: 3px !important;
+}
+
+.card-table{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: none;
+    word-wrap:break-word ;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: .25rem;
+}
+
+
+
+.card{
+    height: 60vh;
+    margin: 25px;
+    padding: 25px;
+}
+

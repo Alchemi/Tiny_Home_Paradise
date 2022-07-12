@@ -1,0 +1,61 @@
+<ng-container *ngIf= "prodL.length !=0">
+    <div class="card-table">
+        <div class="wish-list_product">
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>SKU</th>
+                        <th>Property Title</th>
+                        <th>Image</th>
+                        <th>Location</th>
+                        <th>Price</th>
+                        <th>Rooms</th>
+                        <th>Baths</th>
+                        <th>Size</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor=" let item of prodL; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{item.house_name}}</td>
+                    <td><img style="width: 120px;" src ="{{item.imageUrl}}" alt=""></td>
+                    <td>{{item.location}}</td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.rooms}}</td>
+                    <td>{{item.baths}}</td>
+                    <td>{{item.size}}</td>
+                    <button (click) ="removeItem(item)" class="btn btn-danger">Delete</button>
+                </tr>
+                <tr>
+                    <td colspan="4"></td>
+                    
+                    <td><button routerLink="/listings" class="btton">Browse Listings</button></td>
+                    <!-- <td><button routerLink="/contact-seller" class="btn btn-primary">Contact Seller</button></td> MAYBE DELETE THIS PART -->
+                    
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</ng-container>
+
+
+
+
+
+<ng-container *ngIf= "prodL.length==0">
+<div class="container">
+    <div class="card">
+        <h3 class="card-title">Wish-List</h3>
+    </div>
+    <div class="center">
+        <img src="../../../assets/images/empty-house.png" alt="">
+        <h2>Your Wishlist is Empty</h2>
+        <h4>Find your Dream Tiny Home! </h4>
+        <button routerLink="/listings" class="btn btn-primary">Browse Listings</button>
+    </div>
+</div>
+</ng-container>
