@@ -55,8 +55,6 @@ import { WishListComponent } from './shared/wish-list/wish-list.component';
     SignupComponent,
     HomeComponent,
     ProfileComponent,
-
-
     HeaderComponent,
     FooterComponent,
     ProductComponent,
@@ -66,15 +64,12 @@ import { WishListComponent } from './shared/wish-list/wish-list.component';
     HomeComponent,
     ContactComponent,
     FooterComponent,
-
-
     SearchComponent,
     AddPropertyComponent,
     ListingsComponent,
     PropertyDetailsComponent,
-
     SearchComponent,
-      WishListComponent
+    WishListComponent
 
 
 
