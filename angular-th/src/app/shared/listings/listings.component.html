@@ -1,12 +1,5 @@
 
- <app-search (searchZipcodeChanged)="onSearchZipcodeEntered($event)"
-            (searchMinChanged)="onSearchMinEntered($event)"
-            (searchMaxChanged)="onSearchMaxEntered($event)"
-            (searchMinSizeChanged)="onSearchMinSizeEntered($event)"
-            (searchMaxSizeChanged)="onSearchMaxSizeEntered($event)"
-            (searchBedChanged)="onBedroomEntered($event)"
-            (searchBathChanged)="onBathroomEntered($event)">
-</app-search> 
+ 
 
 
 <!-- <div class= "search ">
@@ -22,6 +15,14 @@
     <h1 class="heading-1">All Listings</h1>
     <div class= "actions">
         <span> Filter</span>
+        <app-search  (searchZipcodeChanged)="onSearchZipcodeEntered($event)"
+            (searchMinChanged)="onSearchMinEntered($event)"
+            (searchMaxChanged)="onSearchMaxEntered($event)"
+            (searchMinSizeChanged)="onSearchMinSizeEntered($event)"
+            (searchMaxSizeChanged)="onSearchMaxSizeEntered($event)"
+            (searchBedChanged)="onBedroomEntered($event)"
+            (searchBathChanged)="onBathroomEntered($event)">
+</app-search> 
  </div>
 </div>
 <div class="listings">
