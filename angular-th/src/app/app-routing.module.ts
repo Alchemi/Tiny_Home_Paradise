@@ -12,6 +12,7 @@ import { ProductComponent } from './shared/product/product.component';
 import { ListingsComponent } from './shared/listings/listings.component';
 import { PropertyDetailsComponent } from './shared/property-details/property-details.component';
 import { AddPropertyComponent } from './shared/add-property/add-property.component';
+import { WishListComponent } from './shared/wish-list/wish-list.component';
 
 
 const routes: Routes = [
@@ -33,31 +34,38 @@ const routes: Routes = [
     component: AboutComponent
   },
   {
+    path: 'add-property',
+    component: AddPropertyComponent,
+  },
+  {
     path:'contact',
     component: ContactComponent
 
-  },
-  {
-    path: 'profile', 
-    component: ProfileComponent
-  },
-  {
-    path:'product',
-    component: ProductComponent
   },
   {
     path:'listings',
     component: ListingsComponent
   },
   {
+    path:'product',
+    component: ProductComponent
+  },
+  {
+    path: 'profile', 
+    component: ProfileComponent
+  },
+
+  {
     path: 'property-details/:id',
     component: PropertyDetailsComponent,
     outlet: 'd',
   },
   {
-    path: 'add-property',
-    component: AddPropertyComponent,
+    path: 'wish-list',
+    component: WishListComponent,
   },
+ 
+
 ];
 
 @NgModule({

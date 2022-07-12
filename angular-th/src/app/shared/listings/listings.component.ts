@@ -1,32 +1,95 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Firestore, getDocs,collection } from '@angular/fire/firestore';
 import { Observable } from '@firebase/util';
 import { propertiesList } from 'app/helpers/propertiesList';
-import { subscribeOn } from 'rxjs';
+import { Subject, subscribeOn, takeUntil } from 'rxjs';
 import { DataService } from '../data.service';
 import { Product } from 'app/model/product';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { OpenState, UiService } from 'app/services/ui.service';
+import { Router } from '@angular/router';
+
+import { } from 'rxjs'
+import {gsap} from 'gsap'
+import { WishListService } from 'app/services/wish-list.service';
+
 
 @Component({
   selector: 'app-listings',
   templateUrl: './listings.component.html',
-  styleUrls: ['./listings.component.scss'],encapsulation: ViewEncapsulation.ShadowDom
+  styleUrls: ['./listings.component.css'],
+  animations: [
+    trigger('property-detailsPage', [
+      state(
+        'open',
+        style({
+          opacity:1,
+          width:'30%',
+          transform:'translateX(0)',
+          visibility: 'visible'
+        })
+      ),
+      state(
+        'closed',
+        style({
+          opacity: 0,
+          width: '0%',
+          transform: 'translateX(80px)',
+          visibility: 'hidden'
+        })
+      ),
+      transition('closed => open', [animate('0.4s ease-out')]),
+      transition('open => closed', [animate('0.4s ease-out')]),
+    ])
+  ]
 })
-export class ListingsComponent implements OnInit {
+export class ListingsComponent implements OnInit{
+  // @ViewChild('nav', {static: true}) nav: ElementRef<HTMLUListElement>;
+  // destroyed$ = new Subject<void>;
+  // openState: OpenState;
+
+  addtoWishList(item: any){
+
+    this.wishListService.addtoWishList(item);
+    
+  }
+  
 
   
-  
-  
-  
   public data:any=[]
-  constructor(private afs : Firestore,) { 
+  constructor(private afs : Firestore, private wishListService: WishListService,public ui: UiService, private cdr: ChangeDetectorRef, private router: Router) { 
     this.getProperties();
   }
   
  pList:Product[]=[];
   
  ngOnInit(): void {
+
+
     this.getProperties();
+
+    
+    // this.ui
+    // .getOpenState()
+    // .pipe(takeUntil(this.destroyed$))
+    // .subscribe((openState: OpenState) => {
+    //   this.openState = openState;
+    //   this.cdr.detectChanges();
+    // });
   }
+
+  // ngOnDestroy() {
+  //   this.destroyed$.next();
+  //   this.destroyed$.complete();
+  // }
+
+
+  // onNavigate(link: string) {
+  //   if(this.router.url.startsWith('/listings') && link != '/listings') {
+  //     this.ui.openState.next('closed');
+  //   }
+  // }
+
   zipcodeText:string = '';
   minText:number =0;
   maxText:number =0;

@@ -4,12 +4,14 @@ import { Product } from 'app/model/product';
 @Component({
   selector: 'app-property-details',
   templateUrl: './property-details.component.html',
-  styleUrls: ['./property-details.component.scss'],encapsulation: ViewEncapsulation.ShadowDom
+  styleUrls: ['./property-details.component.css']
 })
 export class PropertyDetailsComponent implements OnInit {
-  product: Product | undefined;
+  
 
   constructor() { }
+
+  product!: Product; 
 
   ngOnInit(): void {
   }

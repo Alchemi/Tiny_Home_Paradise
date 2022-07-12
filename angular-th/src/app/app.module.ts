@@ -47,6 +47,7 @@ import { ListingsComponent } from './shared/listings/listings.component';
 import { PropertyDetailsComponent } from './shared/property-details/property-details.component';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { ProfileComponent } from './profile/profile.component';
+import { WishListComponent } from './shared/wish-list/wish-list.component';
 
 
 
@@ -76,7 +77,8 @@ import { ProfileComponent } from './profile/profile.component';
     ListingsComponent,
     PropertyDetailsComponent,
 
-    SearchComponent
+    SearchComponent,
+      WishListComponent
 
 
 
