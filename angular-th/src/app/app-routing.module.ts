@@ -9,6 +9,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ProductComponent } from './shared/product/product.component';
 import { ListingsComponent } from './shared/listings/listings.component';
 import { PropertyDetailsComponent } from './shared/property-details/property-details.component';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
