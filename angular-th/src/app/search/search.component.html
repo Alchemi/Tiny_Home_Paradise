@@ -1,6 +1,10 @@
+
 <mat-card  class="container mt-4">
     <div class="row  search">
-        
+      <h1 class="center">Filter Results</h1>
+      <span>Keyword:</span>
+      <input type="text" placeholder="Keywords" [(ngModel)]="enteredKeyword" (input)="onSearchKeywordChanged()">
+      
       <span>Location:</span>
       <input type="text" placeholder="City, State, or Zipcode" [(ngModel)]="enteredZipcode" (input)="onSearchZipcodeChanged()">
       <span>Price</span>
@@ -30,5 +34,6 @@
         <option value=2>2</option>
     </select>
     </div>
-   
+
 </mat-card>
+

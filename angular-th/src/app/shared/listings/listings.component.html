@@ -1,13 +1,15 @@
 
- <app-search (searchZipcodeChanged)="onSearchZipcodeEntered($event)"
-            (searchMinChanged)="onSearchMinEntered($event)"
-            (searchMaxChanged)="onSearchMaxEntered($event)"
-            (searchMinSizeChanged)="onSearchMinSizeEntered($event)"
-            (searchMaxSizeChanged)="onSearchMaxSizeEntered($event)"
-            (searchBedChanged)="onBedroomEntered($event)"
-            (searchBathChanged)="onBathroomEntered($event)">
+ 
+<app-search  
+(searchKeywordChanged)="onSearchKeywordEntered($event)"
+(searchZipcodeChanged)="onSearchZipcodeEntered($event)"
+(searchMinChanged)="onSearchMinEntered($event)"
+(searchMaxChanged)="onSearchMaxEntered($event)"
+(searchMinSizeChanged)="onSearchMinSizeEntered($event)"
+(searchMaxSizeChanged)="onSearchMaxSizeEntered($event)"
+(searchBedChanged)="onBedroomEntered($event)"
+(searchBathChanged)="onBathroomEntered($event)">
 </app-search> 
-
 
 <!-- <div class= "search ">
     <label for= "search">
@@ -20,24 +22,23 @@
 <div class = "listing-full">
 <div class= "listing-actions">
     <h1 class="heading-1">All Listings</h1>
-    <div class= "actions">
-        <span> Filter</span>
- </div>
+    
 </div>
 <div class="listings">
  <div class="listing" *ngFor="let item of data">
-    <div class="listing element" *ngIf="zipcodeText ===''|| item.location.toLowerCase().includes(zipcodeText.toLowerCase())"></div>
-    <div *ngIf="(minText===0|| maxText===0)||(item.price>=minText && item.price<=maxText)"></div>
-    <div *ngIf="(minSizeText===0 || maxSizeText===0)||(item.size>=minSizeText && item.size<=maxSizeText)"></div>
-    <div *ngIf="(bedroomText==0)||(item.rooms==bedroomText)"></div>
-    <div *ngIf="(bathroomText==0)||(item.baths==bathroomText)"></div>
+    <div *ngIf="keywordText ===''|| item.house_name.toLowerCase().includes(keywordText.toLowerCase())">
+    <div *ngIf="zipcodeText ===''|| item.location.toLowerCase().includes(zipcodeText.toLowerCase())">
+    <div *ngIf="(minText===0|| maxText===0)||(item.price>=minText && item.price<=maxText)">
+    <div *ngIf="(minSizeText===0 || maxSizeText===0)||(item.size>=minSizeText && item.size<=maxSizeText)">
+    <div *ngIf="(bedroomText==0)||(item.rooms==bedroomText)">
+    <div *ngIf="(bathroomText==0)||(item.baths==bathroomText)">
          <div class = "listing_description ">
             <button class="button" (click)=addtoWishList(item)>
                     Add to Wish List
             </button>
             <div class = "listing_heading">
                 <h4 class="heading-4 ">{{ item.house_name }}</h4>
-                <div class="image">{{item.imageUrl}}</div>
+                <div class="image"><img [src]="item.imageUrl"></div>
                 <span class="dash ">&mdash; </span>
                 <span class = "type"> {{ item.location }}</span>
             </div>
@@ -55,9 +56,14 @@
             </div>
          </div>
     </div>
-    <router-outlet></router-outlet>
-    <div class="property-details"> <!--[@property-details]="openState-->
-        <router-outlet name="d"></router-outlet>
     </div>
     </div>
+    </div>
+    </div>
+ </div>
+    </div>
+    
+    
 </div>
+
+

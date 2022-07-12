@@ -1,7 +1,5 @@
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { FullscreenOverlayContainer } from '@angular/cdk/overlay';
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
@@ -14,6 +12,8 @@ import { PropertyDetailsComponent } from './shared/property-details/property-det
 import { AddPropertyComponent } from './shared/add-property/add-property.component';
 import { WishListComponent } from './shared/wish-list/wish-list.component';
 
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
@@ -28,7 +28,7 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
-  }, 
+  },
   {
     path:'about',
     component: AboutComponent
@@ -43,17 +43,18 @@ const routes: Routes = [
 
   },
   {
-    path:'listings',
-    component: ListingsComponent
+    path: 'profile',
+    component: ProfileComponent
   },
   {
     path:'product',
     component: ProductComponent
   },
   {
-    path: 'profile', 
-    component: ProfileComponent
+    path:'listings',
+    component: ListingsComponent
   },
+ 
 
   {
     path: 'property-details/:id',

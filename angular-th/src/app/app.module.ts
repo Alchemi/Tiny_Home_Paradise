@@ -1,12 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,14 +18,11 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
-
+import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { provideStorage, getStorage } from '@angular/fire/storage';
 
 
-
-/* Angular Material */
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
@@ -59,7 +55,7 @@ import { WishListComponent } from './shared/wish-list/wish-list.component';
     SignupComponent,
     HomeComponent,
     ProfileComponent,
-    
+
 
     HeaderComponent,
     FooterComponent,
@@ -71,7 +67,7 @@ import { WishListComponent } from './shared/wish-list/wish-list.component';
     ContactComponent,
     FooterComponent,
 
-    
+
     SearchComponent,
     AddPropertyComponent,
     ListingsComponent,
@@ -87,8 +83,8 @@ import { WishListComponent } from './shared/wish-list/wish-list.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
     AngularMaterialModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
     FlexLayoutModule,
