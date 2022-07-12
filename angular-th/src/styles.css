@@ -7,26 +7,29 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     display: block;
     max-width: 300px;
     margin: auto;
-  
+
     background: white;
     padding: 48px;
     border-radius: 16px;
-  
+
 }
- 
+
   .center {
     display: flex;
     justify-content: center;
   }
-  
+
   .margin-top {
     margin-top: 16px !important;
   }
-  
+
   .text-center {
     text-align: center;
   }
   .THP{
-    color: gold;
+    color: rgb(255, 132, 0);
   }
- 
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
