@@ -1,25 +1,16 @@
 <mat-toolbar>
-    <h5>Languages</h5>
     <a routerLink=""><img src="./assets/images/THP_logo.png" alt="TinyHome Paradise"></a>
     <div class="navbar-bottom">
         <ul class="navbar-list">
-
           <li>
             <a class="navbar-link" routerLink=''>Home</a>
           </li>
-
           <li>
             <a class="navbar-link" routerLink="about">About</a>
           </li>
-
-         
-
           <li>
             <a class="navbar-link" routerLink="listings">Search for Properties</a>
           </li>
-
-         
-
           <li>
             <a class="navbar-link" routerLink="contact">Contact</a>
           </li>
@@ -27,7 +18,6 @@
         </ul>
       </div>
 
-    
     <ng-container *ngIf="authService.currentUser$ | async as user; else loginButton">
     <button mat-button [matMenuTriggerFor]="userMenu">
         <mat-icon>account_circle</mat-icon>
@@ -38,7 +28,7 @@
     <ng-template #loginButton>
         <button mat-button routerLink="login">Sign in</button>
     </ng-template>
-    
+
 </mat-toolbar>
 <mat-menu #userMenu="matMenu">
     <button mat-menu-item (click)="logout()">Logout</button>

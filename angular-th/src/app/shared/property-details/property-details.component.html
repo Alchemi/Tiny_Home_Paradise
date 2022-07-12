@@ -1,1 +1,21 @@
-<p>property-details works!</p>
+<a class="back">
+    <svg class = "icon icon-back">
+    <use href="./assets/icons.svg#icon-chevron-small-left"></use>
+    </svg>
+    </a>
+    <div class= "info-image">
+    <img src="{{ product?.imageUrl }}" alt=" " />
+    </div>
+    <div class = "property-info">
+    <h4 class="heading-4">{{ product?.location }}</h4>
+    <span class="type"> {{ product?.house_name }}</span>
+    <div class= "more ">
+    <span>{{ product.rooms }}</span>
+    <span>{{ product.baths }}</span>
+    <span> {{ product.size }}sq ft</span>
+    <span> {{ product.year }}</span>
+    <span> {{ product.mobility }}</span>
+    </div>
+    <span class="price">${{ product.price }}</span>
+    </div>
+    <button class = "call ">Contact Seller</button>

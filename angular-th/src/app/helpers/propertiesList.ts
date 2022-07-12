@@ -1,8 +1,8 @@
 import { Product } from "../model/product"
 
-export const propertiesList = [
+export const propertiesList: Product[] = [
     {
-       id: 1,
+       id: '',
        house_name : "Tiny Townhouse",
        location: "Austin TX 99999",
        rooms: 3,
@@ -10,10 +10,11 @@ export const propertiesList = [
        price: 250000,
        size: 400,
        year: 2001,
-       mobile: true,
+       mobility: "Yes",
+       imageUrl: ""
     },
     {
-       id: 2,
+       id: '',
        house_name : "Mini Mansion",
        location: "Tacoma Wa 888888",
        rooms: 4,
@@ -21,6 +22,7 @@ export const propertiesList = [
        price: 523000,
        size: 800,
        year: 2001,
-       mobile: false,
+       mobility: "No",
+       imageUrl: "",
     },
 ]

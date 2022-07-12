@@ -1,12 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,14 +18,11 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
-
+import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { provideStorage, getStorage } from '@angular/fire/storage';
 
 
-
-/* Angular Material */
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
@@ -47,6 +43,7 @@ import { ListingsComponent } from './shared/listings/listings.component';
 import { PropertyDetailsComponent } from './shared/property-details/property-details.component';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { ProfileComponent } from './profile/profile.component';
+import { WishListComponent } from './shared/wish-list/wish-list.component';
 
 
 
@@ -58,7 +55,7 @@ import { ProfileComponent } from './profile/profile.component';
     SignupComponent,
     HomeComponent,
     ProfileComponent,
-    
+
 
     HeaderComponent,
     FooterComponent,
@@ -70,13 +67,14 @@ import { ProfileComponent } from './profile/profile.component';
     ContactComponent,
     FooterComponent,
 
-    
+
     SearchComponent,
     AddPropertyComponent,
     ListingsComponent,
     PropertyDetailsComponent,
 
-    SearchComponent
+    SearchComponent,
+      WishListComponent
 
 
 
@@ -85,8 +83,8 @@ import { ProfileComponent } from './profile/profile.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
     AngularMaterialModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
     FlexLayoutModule,

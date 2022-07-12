@@ -1,37 +1,30 @@
 
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
 
-      <!-- 
-        - #HERO
-      -->
+<body id="page-top">
 
-      <section class="hero" id="home">
-        <div class="container">
-
-          <div class="hero-content">
-            <p class="hero-subtitle">
-              <ion-icon name="home"></ion-icon>
-    
-              <span>THP</span>
-            </p>
-          
-            <h2 class="h1 hero-title">Find Your Next Tiny Dream House With Us</h2>
-
-            <p class="hero-text">
-              We are the best at helping people find peace and comfort in a beautiful tiny home. 
-            </p>
-
-            <button class="btn">Make An Inquiry</button>
-
+<div class="card" >
+            <h2 class="h1 hero-title">Find Your Next Tiny Dream House</h2>
+              <!-- <img class="img-fluid" src="img/1847p.png" alt="Card image cap"> -->
+              <div class="search-box">
+                  <div class="form-group">
+                      <div class="icon-addon addon-lg">
+                          <input type="text" placeholder="Search by Address, City or Zipcode" class="form-control" id="email">
+                          <label for="address" class="glyphicon glyphicon-search" rel="tooltip" title="address"></label>
+                      </div>
+                  </div>
+                  
+              </div>
+          </div>
+          <div id="child">
+            <div class="container-fluid drop-shadow">
+              <div class="row">
+              </div>
+            </div>
           </div>
 
-          <figure class="hero-banner">
-            <img src="./assets/images/homepage tinyhouse1.png" alt="Modern house model" class="w-100">
-          </figure>
-
-        </div>
-      </section>
       <!--About-->
-      
+
       <!--services-->
       <section class="service" id="service">
         <div class="container">
@@ -54,12 +47,11 @@
                 </h3>
 
                 <p class="card-text">
-                  over 1 million+ homes for sale available on the website, we can match you with a house you will want
-                  to call home.
+                  Finding your new tiny house shouldn't be a hassle. With our advanced search engine, we'll connect you to your dream home in no time.
                 </p>
 
-                <a href="#" class="card-link">
-                  <span>Buy</span>
+                <a routerLink="listings" class="card-link">
+                  <span>Find A Home</span>
 
                   <ion-icon name="arrow-forward-outline"></ion-icon>
                 </a>
@@ -76,16 +68,15 @@
                 </div>
 
                 <h3 class="h3 card-title">
-                  <a href="#">Sell a home</a>
+                  <a routerLink="add-property">Sell a home</a>
                 </h3>
 
                 <p class="card-text">
-                  over 1 million+ homes for sale available on the website, we can match you with a house you will want
-                  to call home.
+                  We will help sell your home and give you the best appraisals in today's market.
                 </p>
 
-                <a href="#" class="card-link">
-                  <span> Sell </span>
+                <a routerLink="add-property" class="card-link">
+                  <span>Find A Home</span>
 
                   <ion-icon name="arrow-forward-outline"></ion-icon>
                 </a>
@@ -600,7 +591,7 @@
 
               <p class="card-text">We can help you realize your dream of a new home</p>
             </div>
-              <a routerLink="listings">
+              <a routerLink="product">
             <button class="btn cta-btn">
               <span>Explore Properties</span>
 
@@ -611,7 +602,4 @@
         </div>
       </section>
     -->
-
-   
-
 
