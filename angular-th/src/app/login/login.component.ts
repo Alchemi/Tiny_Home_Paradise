@@ -25,7 +25,10 @@ export class LoginComponent implements OnInit {
     
     console.log(value)
     
-     this.authService.login(value.email, value.password).subscribe(()=>{  
+     this.authService.login(value.email, value.password).subscribe(()=>{
+      
+      localStorage.setItem('what', value.email);
+      
       this.router.navigate(['']);})
      
     
