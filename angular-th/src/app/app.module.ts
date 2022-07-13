@@ -44,6 +44,12 @@ import { PropertyDetailsComponent } from './shared/property-details/property-det
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { ProfileComponent } from './profile/profile.component';
 import { WishListComponent } from './shared/wish-list/wish-list.component';
+import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideFunctions,getFunctions } from '@angular/fire/functions';
+import { provideMessaging,getMessaging } from '@angular/fire/messaging';
+import { providePerformance,getPerformance } from '@angular/fire/performance';
+import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
 
 
 
@@ -94,8 +100,14 @@ import { WishListComponent } from './shared/wish-list/wish-list.component';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(()=>getStorage()),
+    provideAnalytics(() => getAnalytics()),
+    provideDatabase(() => getDatabase()),
+    provideFunctions(() => getFunctions()),
+    provideMessaging(() => getMessaging()),
+    providePerformance(() => getPerformance()),
+    provideRemoteConfig(() => getRemoteConfig()),
   ],
-  providers: [AngularFirestore],
+  providers: [AngularFirestore, ScreenTrackingService,UserTrackingService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

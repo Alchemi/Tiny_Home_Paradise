@@ -9,8 +9,8 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { OpenState, UiService } from 'app/services/ui.service';
 import { Router } from '@angular/router';
 
-import { } from 'rxjs'
-import {gsap} from 'gsap'
+import { } from 'rxjs';
+//import {gsap} from 'gsap';
 import { WishListService } from 'app/services/wish-list.service';
 
 
