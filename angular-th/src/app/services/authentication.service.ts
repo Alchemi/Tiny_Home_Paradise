@@ -57,6 +57,7 @@ export class AuthenticationService {
          })
        );
      }
+  
   // sign(newUser:any){
   //   return this.http.post<any>("http://localhost:3000/THP/authcontroller", newUser, httpOptions)
   //   .subscribe({

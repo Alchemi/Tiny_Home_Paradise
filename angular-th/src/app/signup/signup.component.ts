@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EmailAuthCredential } from '@firebase/auth';
 import { catchError } from 'rxjs';
-
+import { Auth, createUserWithEmailAndPassword } from '@angular/fire/auth';
 import { __values } from 'tslib';
 import { AuthenticationService } from '../services/authentication.service';
+import { Firestore, collection, doc} from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-signup',
@@ -24,7 +25,8 @@ export class SignupComponent implements OnInit {
   }
 
   constructor(private authService:AuthenticationService,
-    private router: Router) { }
+    private router: Router){}
+    
 
   ngOnInit(): void {
   }
