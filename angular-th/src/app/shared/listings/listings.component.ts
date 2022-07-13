@@ -67,7 +67,7 @@ export class ListingsComponent implements OnInit{
 
 
     this.getProperties();
-
+    
     
     // this.ui
     // .getOpenState()
@@ -91,10 +91,10 @@ export class ListingsComponent implements OnInit{
   // }
 
   zipcodeText:string = '';
-  minText:number =0;
-  maxText:number =0;
-  minSizeText:number =0;
-  maxSizeText:number =0;
+  minText:any ='';
+  maxText:any ='';
+  minSizeText:any='';
+  maxSizeText:any ='';
   bedroomText:number =0;
   bathroomText:number =0;
   keywordText:string='';
@@ -111,6 +111,7 @@ export class ListingsComponent implements OnInit{
    })
    
   }
+
 
 
   searchText:string = '';
