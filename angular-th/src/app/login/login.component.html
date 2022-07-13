@@ -1,5 +1,6 @@
 <div class="form-container mat-elevation-z5">
     <h1>Welcome back user</h1>
+    
 <form #LoginForm="ngForm" (ngSubmit)="submit(LoginForm.value)">
     <div>
         <mat-form-field>
@@ -25,6 +26,7 @@
                 
       </mat-form-field>
     </div>
+    <small class="text-danger" >{{msgError}}</small>
     <div class="center margin-top">
         <button type="submit" mat-raised-button color="primary">Login</button>
     </div>
@@ -39,4 +41,5 @@
         </button></a>
     </div>
 </form> 
+
   </div>
