@@ -33,6 +33,12 @@
         <option  value=1>1</option>
         <option value=2>2</option>
     </select>
+    <span for="mobil">Mobility</span>
+    <select id="mobil" [(ngModel)]="enteredMobility" (mouseleave)="onMobilityChanged()">
+        <option value=''>Any</option>
+        <option  value='Yes'>Yes</option>
+        <option value='No'>No</option>
+    </select>
     </div>
 
 </mat-card>
