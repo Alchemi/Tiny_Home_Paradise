@@ -9,9 +9,12 @@ import { RouterLink } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
-
+ onSearch(value:any){
+  localStorage.setItem('search', value.address)
+  this.router.navigate(['listings']);
+ }
 }

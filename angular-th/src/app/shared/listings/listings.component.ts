@@ -9,8 +9,8 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { OpenState, UiService } from 'app/services/ui.service';
 import { Router } from '@angular/router';
 
-import { } from 'rxjs'
-import {gsap} from 'gsap'
+import { } from 'rxjs';
+//import {gsap} from 'gsap';
 import { WishListService } from 'app/services/wish-list.service';
 
 
@@ -67,7 +67,7 @@ export class ListingsComponent implements OnInit{
 
 
     this.getProperties();
-
+    
     
     // this.ui
     // .getOpenState()
@@ -91,12 +91,13 @@ export class ListingsComponent implements OnInit{
   // }
 
   zipcodeText:string = '';
-  minText:number =0;
-  maxText:number =0;
-  minSizeText:number =0;
-  maxSizeText:number =0;
+  minText:any ='';
+  maxText:any ='';
+  minSizeText:any='';
+  maxSizeText:any ='';
   bedroomText:number =0;
   bathroomText:number =0;
+  keywordText:string='';
   
   dbInstance = collection(this.afs, 'products')
   getProperties(){
@@ -112,7 +113,12 @@ export class ListingsComponent implements OnInit{
   }
 
 
+
   searchText:string = '';
+  onSearchKeywordEntered(searchValue:string){
+    this.keywordText=searchValue;
+    console.log(this.keywordText)
+  }
 
   onSearchZipcodeEntered(searchValue:string){
     this.zipcodeText = searchValue;
