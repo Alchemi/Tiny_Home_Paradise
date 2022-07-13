@@ -29,6 +29,7 @@ export class SearchComponent implements OnInit {
   enteredBedroom:number=0;
   enteredBathroom:number=0;
   enteredKeyword:string='';
+  enteredMobility:string='';
 
   @Output()
   searchZipcodeChanged : EventEmitter<string> = new EventEmitter<string>();
@@ -71,6 +72,9 @@ export class SearchComponent implements OnInit {
   }
   onBathChanged(){
     this.searchBathChanged.emit(this.enteredBathroom);
+  }
+  onMobilityChanged(){
+    this.searchMobilityChanged.emit(this.enteredMobility);
   }
 
 }
