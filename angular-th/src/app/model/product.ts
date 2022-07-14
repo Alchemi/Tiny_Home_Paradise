@@ -11,5 +11,6 @@ export interface Product {
     mobility: string,
     email:string,
     phone:string
+    description:string
 
 }
