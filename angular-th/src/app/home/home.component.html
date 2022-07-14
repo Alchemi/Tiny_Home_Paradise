@@ -1,16 +1,12 @@
 
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
 <div class="card" >
-            <h2 class="h1 hero-title">Find Your Next Tiny Dream House</h2>
+            <h2 class="h5 hero-title">Find Your Next Tiny Dream House</h2>
               <div class="search-box">
                   <div class="form-group">
                       <div class="icon-addon addon-lg">
-<<<<<<< HEAD
-                          <input type="text" placeholder="Search by City, State, or Zip code" class="form-control" id="address">
-=======
                         <form #SearchForm ="ngForm" (ngSubmit)="onSearch(SearchForm.value)">
                           <input type="text" placeholder="Search by City, State, or Zip code" class="form-control" name="address" ngModel id="address">
->>>>>>> d4f5e6cf24c851dee7c30fda51c32aaa86a31622
                           <label for="address" class="glyphicon glyphicon-search" rel="tooltip" title="address"></label>
                           <button type="submit">Search</button>
                         </form>

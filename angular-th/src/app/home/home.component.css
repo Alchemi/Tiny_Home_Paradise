@@ -1,11 +1,3 @@
-.banner
-{
-  background-image: url('../../assets/images/hpth1.png');
-    height: 400px;
-    background-position: center top;
-    background-size: cover;
-}
-
 
 .content
 {
@@ -183,7 +175,7 @@ padding-left:35px;
 .hero-title{
   text-align:center;
   width:100%;
-  height: -4px;
+  height: -50px;
   margin: auto;
   text-align: center;
   margin-top: 0px;

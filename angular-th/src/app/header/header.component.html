@@ -1,22 +1,22 @@
 <mat-toolbar>
-    <a routerLink=""><img src="./assets/images/THP_logo.png" alt="TinyHome Paradise"></a>
-    <div class="navbar-bottom">
-        <ul class="navbar-list">
-          <li>
-            <a class="navbar-link" routerLink=''>Home</a>
-          </li>
-          <li>
-            <a class="navbar-link" routerLink="about">About</a>
-          </li>
-          <li>
-            <a class="navbar-link" routerLink="listings">Search for Properties</a>
-          </li>
-          <li>
-            <a class="navbar-link" routerLink="contact">Contact</a>
-          </li>
+  <a routerLink=""><img src="./assets/images/THP_logo.png" alt="TinyHome Paradise"></a>
+  <div class="navbar-bottom">
+      <ul class="navbar-list">
+        <li>
+          <a class="navbar-link" routerLink=''>Home</a>
+        </li>
+        <li>
+          <a class="navbar-link" routerLink="about">About</a>
+        </li>
+        <li>
+          <a class="navbar-link" routerLink="listings">Search for Properties</a>
+        </li>
+        <li>
+          <a class="navbar-link" routerLink="contact">Contact</a>
+        </li>
 
-        </ul>
-      </div>
+      </ul>
+    </div>
 
     <ng-container *ngIf="authService.currentUser$ | async as user; else loginButton">
     <button mat-button [matMenuTriggerFor]="userMenu">
