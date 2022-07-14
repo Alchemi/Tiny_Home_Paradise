@@ -9,15 +9,10 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { OpenState, UiService } from 'app/services/ui.service';
 import { Router } from '@angular/router';
 
-<<<<<<< HEAD
-import { } from 'rxjs/operators'
-import {gsap} from 'gsap'
-=======
 
 import { } from 'rxjs';
 //import {gsap} from 'gsap';
 
->>>>>>> 06f8d34683886f26d86e5f6ebe6394cd411897ab
 import { WishListService } from 'app/services/wish-list.service';
 import { ANIMATION_ELEMENT, elementAnimations } from 'app/animations/elementAnimations';
 
@@ -70,10 +65,6 @@ export class ListingsComponent implements OnInit{
   
  ngOnInit(): void {
     this.getProperties();
-<<<<<<< HEAD
-=======
-
->>>>>>> 06f8d34683886f26d86e5f6ebe6394cd411897ab
     // this.ui
     //  .getOpenState().pipe(takeUntil(this.destroyed$)).subscribe((openState: OpenState | any) => {
     //    this.openState = openState;

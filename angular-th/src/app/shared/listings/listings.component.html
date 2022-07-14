@@ -12,10 +12,6 @@
 (searchMobilityChanged)="onMobilityEntered($event)">
 </app-search> 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 06f8d34683886f26d86e5f6ebe6394cd411897ab
     
 <!-- <div class= "search ">
     <label for= "search">
@@ -32,7 +28,7 @@
 
 <div class="listings">
  <div class="listing" *ngFor=" let item of data">
- <div class="listing_image"><img [src]="item.imageUrl"></div>
+ 
     <div *ngIf="keywordText ===''|| item.house_name.toLowerCase().includes(keywordText.toLowerCase())">
     <div *ngIf="zipcodeText ===''|| item.location.toLowerCase().includes(zipcodeText.toLowerCase())">
     <div *ngIf="(minText===''|| maxText==='')||(item.price>=minText && item.price<=maxText)">
@@ -40,7 +36,8 @@
     <div *ngIf="(bedroomText==0)||(item.rooms==bedroomText)">
     <div *ngIf="(bathroomText==0)||(item.baths==bathroomText)">
     <div *ngIf="(mobilityText==='')||(item.mobility.toLowerCase().includes(mobilityText.toLowerCase()))">
-         <div class = "listing_description ">
+        <div class="listing_image"><img [src]="item.imageUrl"></div> 
+        <div class = "listing_description ">
             
         
             
