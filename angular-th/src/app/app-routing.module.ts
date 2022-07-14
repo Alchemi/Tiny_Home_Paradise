@@ -73,8 +73,10 @@ const routes: Routes = [
   {
     path: 'property-details',
     component: PropertyDetailsComponent,
+
     
     ...canActivate(redirectToLogin)
+
   },
   {
     path: 'wish-list',

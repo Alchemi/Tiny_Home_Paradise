@@ -12,7 +12,10 @@
 (searchMobilityChanged)="onMobilityEntered($event)">
 </app-search> 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 06f8d34683886f26d86e5f6ebe6394cd411897ab
     
 <!-- <div class= "search ">
     <label for= "search">
@@ -67,14 +70,15 @@
             <div><span class= "price">${{ item.price | number:'4.2-5'}}</span>
             
         </div>
-        <button class="btn" (click)="navigate(item.house_name)">
-            View Property Details
-    </button>
-    <br>
+        
+    
         <button class="btn" (click)=addtoWishList(item)>
             Add to Wish List
-    </button>
-        
+        </button>
+        <br>
+        <button class="btn" (click)="navigate(item.house_name)">
+            View Property Details
+        </button>
          </div>
          
     </div>

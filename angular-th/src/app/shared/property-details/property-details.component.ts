@@ -1,6 +1,17 @@
+<<<<<<< HEAD
 import { Component, ElementRef, HostBinding, Input, OnInit, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ANIMATION_ELEMENT } from 'app/animations/elementAnimations';
+=======
+
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { collection, Firestore, getDocs, limit, query, where } from '@angular/fire/firestore';
+
+import { Component, ElementRef, HostBinding, Input, OnInit, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ANIMATION_ELEMENT } from 'app/animations/elementAnimations';
+
+>>>>>>> 06f8d34683886f26d86e5f6ebe6394cd411897ab
 import { Product } from 'app/model/product';
 import { UiService } from 'app/services/ui.service';
 import { DataService } from '../data.service';
