@@ -59,18 +59,8 @@ export class ListingsComponent implements OnInit{
   }
   
 
-
   public data:any=[]
   constructor(private afs : Firestore, private wishListService: WishListService, public ui:UiService, private cdr: ChangeDetectorRef, private router: Router) {  }
-
-  
-  public data: any=[]
-  constructor(private afs : Firestore, private wishListService: WishListService,public ui: UiService, private cdr: ChangeDetectorRef, private router: Router) { 
-    
-  }
-  
-
-
   
  ngOnInit(): void {
     this.getProperties();
