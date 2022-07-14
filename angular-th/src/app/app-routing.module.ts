@@ -12,9 +12,11 @@ import { PropertyDetailsComponent } from './shared/property-details/property-det
 import { AddPropertyComponent } from './shared/add-property/add-property.component';
 import { WishListComponent } from './shared/wish-list/wish-list.component';
 
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { canActivate, redirectUnauthorizedTo, redirectLoggedInTo} from '@angular/fire/auth-guard';
+import { SuccessComponent } from './pages/success/success.component';
 
 const redirectToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectToHome = () => redirectLoggedInTo(['']);
@@ -63,7 +65,10 @@ const routes: Routes = [
     component: ListingsComponent,
     ...canActivate(redirectToLogin)
   },
- 
+ {
+  path:'success',
+  component: SuccessComponent
+ },
 
   {
     path: 'property-details',
