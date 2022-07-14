@@ -35,7 +35,10 @@
     <div *ngIf="(bathroomText==0)||(item.baths==bathroomText)">
     <div *ngIf="(mobilityText==='')||(item.mobility.toLowerCase().includes(mobilityText.toLowerCase()))">
          <div class = "listing_description ">
-            
+            <button class="btn">
+                Add To Wishlist
+        </button>
+        <br>
             <button class="btn" (click)="navigate(item.house_name)">
                 View Property Details
         </button>
