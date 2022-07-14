@@ -11,8 +11,6 @@ import { UiService } from 'app/services/ui.service';
 import { DataService } from '../data.service';
 import {gsap} from 'gsap'
 
-
-
 @Component({
   selector: 'app-property-details',
   templateUrl: './property-details.component.html',
@@ -43,13 +41,13 @@ export class PropertyDetailsComponent implements OnInit {
   // public cu: any;
   // item: any;
 
-  
 
-  constructor(private firestore:Firestore) { }
+  constructor(private firestore:Firestore, private router : Router) { }
 
   product!: Product; 
   prop = localStorage.getItem('prop')
   property:any;
+
   ngOnInit(): void {
     this.getPropDetail(this.prop)
   }

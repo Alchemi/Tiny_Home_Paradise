@@ -3,12 +3,22 @@
     <use href="./assets/icons.svg#icon-chevron-small-left"></use>
     </svg>
     </a>
-    <div class= "info-image" *ngFor=" let product of property">
+
+    <span class= "info_image" *ngFor=" let product of property">
     <img width ="50" height="50" src="{{ product?.imageUrl }}" alt=" " />
-    </div>
-    <div class = "property-info" *ngFor=" let product of property">
+    <br>
+    <div class ="description">{{product.description}}</div>
+    <br>
+    
+    
+    </span>
+    
+    <div class = "property_info" *ngFor=" let product of property">
+        <br>
     <h4 class="heading-4">{{ product?.location }}</h4>
+    <br>
     <span class="type"> {{ product?.house_name }}</span>
+    <br>
     <div class= "more ">
     <span>Bedrooms: {{ product.rooms }}</span>
     <br>
@@ -20,9 +30,11 @@
     <br>
     <span>Mobile: {{ product.mobility }}</span>
     <br>
+    <br>
     </div>
-    <span class="price">Price: ${{ product.price }}</span>
-    
+    <span class="price">Price: ${{ product.price | number:'4.2-5'}}</span>
+    </div>
+    <br>
     <br>
     <button class = "call ">Contact Seller</button>
     <br>
@@ -30,4 +42,4 @@
     <br>
     <span>Seller's Phone Number: {{ product.phone }}</span>
     <br>
-</div>
+
