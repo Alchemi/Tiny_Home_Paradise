@@ -24,7 +24,7 @@ const redirectToHome = () => redirectLoggedInTo(['']);
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'listings',
+    component:HomeComponent,
     pathMatch: 'full',
   },
   {

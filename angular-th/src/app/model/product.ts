@@ -9,5 +9,7 @@ export interface Product {
     size: number,
     year: number,
     mobility: string,
+    email:string,
+    phone:string
 
 }

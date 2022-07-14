@@ -1753,7 +1753,6 @@ div.listing {
   font-weight: 400;
 }
 
-
 .type{
   color: var(--color-grey);
 }
@@ -1767,14 +1766,13 @@ div.listing {
   padding: 5px 20px;
   display: flex;
   align-items: flex-start;
-
+}
 
 .listing_type{
   
   color: var(--color-black);
   font-weight: 400;
   align-self: flex-start;
-
 }
 
 .listing *{

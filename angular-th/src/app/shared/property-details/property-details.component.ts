@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+import { Component, ElementRef, HostBinding, Input, OnInit, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ANIMATION_ELEMENT } from 'app/animations/elementAnimations';
+=======
 
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { collection, Firestore, getDocs, limit, query, where } from '@angular/fire/firestore';
@@ -6,12 +11,13 @@ import { Component, ElementRef, HostBinding, Input, OnInit, SimpleChanges, ViewC
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ANIMATION_ELEMENT } from 'app/animations/elementAnimations';
 
+>>>>>>> 06f8d34683886f26d86e5f6ebe6394cd411897ab
 import { Product } from 'app/model/product';
 import { UiService } from 'app/services/ui.service';
 import { DataService } from '../data.service';
 import {gsap} from 'gsap'
-import { collection, limit, query, where } from '@angular/fire/firestore';
-import { Firestore, getDocs } from '@firebase/firestore';
+import { Firestore, getDocs, collection, limit, query, where } from '@angular/fire/firestore';
+
 
 @Component({
   selector: 'app-property-details',
@@ -43,8 +49,7 @@ export class PropertyDetailsComponent implements OnInit {
   // public cu: any;
   // item: any;
 
-  constructor(public route: ActivatedRoute, private router: Router, public ui: UiService, private data : DataService, private firestore: Firestore) { }
-
+  
 
   constructor(private firestore:Firestore) { }
 
@@ -53,27 +58,9 @@ export class PropertyDetailsComponent implements OnInit {
   property:any;
   ngOnInit(): void {
     this.getPropDetail(this.prop)
-
-
-
-  ngOnInit(): void {
-
-    // console.log(this.item)
-    // this.initDetailAnimations();
-    // // this.route.params.subscribe((params: Params) => {
-    // //   if (params['id']){
-    // //     this.id = parseInt(params['id'], 10);
-    // //     this.item = this.cu.find((p) => p.productList === this.id);
-    // //   }
-    // // })
-    
-
-    // console.log("asf")
-
   }
   async getPropDetail(prop:any) {
     
-
 
     const cuRef = collection(this.firestore, 'products')
     const q = query(cuRef, where("house_name", "==", prop), limit(1))
