@@ -52,6 +52,7 @@ import { provideMessaging,getMessaging } from '@angular/fire/messaging';
 import { providePerformance,getPerformance } from '@angular/fire/performance';
 import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { ContactSellerComponent } from './shared/contact-seller/contact-seller.component';
 
 
 
@@ -78,6 +79,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     PropertyDetailsComponent,
     SearchComponent,
     WishListComponent,
+    ContactSellerComponent,
     
 
 

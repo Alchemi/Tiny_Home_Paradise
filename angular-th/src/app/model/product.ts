@@ -1,5 +1,4 @@
 export interface Product {
-    propertyId: number,
     house_name: string,
     location: string,
     imageUrl: string,
@@ -10,5 +9,7 @@ export interface Product {
     year: number,
     mobility: string,
     description:string
+    email:string,
+    phone:string
 
 }
