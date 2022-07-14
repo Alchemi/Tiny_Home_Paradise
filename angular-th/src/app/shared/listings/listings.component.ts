@@ -154,6 +154,10 @@ export class ListingsComponent implements OnInit{
     console.log(this.mobilityText);
   }
 
-
+  navigate(item:any){
+    localStorage.setItem('prop',item)
+    console.log(item)
+    this.router.navigate(['property-details'])
+  }
   
 }
