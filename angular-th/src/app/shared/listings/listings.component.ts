@@ -54,9 +54,8 @@ export class ListingsComponent implements OnInit{
   // openState: OpenState = "open";
 
   addtoWishList(item: any){
-
     this.wishListService.addtoWishList(item);
-    
+    window.alert("you have added this to your wishlist");
   }
   
 
@@ -138,9 +137,7 @@ export class ListingsComponent implements OnInit{
    })
    
   }
-
-
-
+  
   searchText:string = '';
   onSearchKeywordEntered(searchValue:string){
     this.keywordText=searchValue;
