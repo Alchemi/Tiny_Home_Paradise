@@ -1,0 +1,313 @@
+html {
+    box-sizing: border-box;
+  }
+
+  img{
+    
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+  body {
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    box-sizing: inherit;
+    position: relative;
+    background-color: var(--color-light-1);
+  }
+  .listing_image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  main {
+    padding: 0px 15px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+  }
+  .navigation {
+    width: 250px;
+    position: relative;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 100px repeat 3, 1fr 200px;
+    row-gap: 10px;
+  }
+  h2 {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+  }
+  app-listings {
+    flex: auto;
+    padding: 0 15px;
+    display: grid;
+    align-content: center;
+    grid-template-rows: min-content min-content calc(100vh - 200px);
+  }
+  app-search {
+    width: inherit;
+    list-style: none;
+    display: flex;
+    row-gap: 5px;
+    
+    justify-content: center;
+    grid-row: 0.6666666667;
+  }
+  
+  
+  .search{ 
+    height: 20%;
+    display: grid;
+    row-gap: 2px;
+    align-items: center;
+    grid-row: 2 / 3;
+    padding: 10px 5px 5px 10px;
+  }
+  
+  .mat-card{
+    margin-top: 10px;
+    width: 75%;
+    display: grid;  
+    padding: 0px;
+    background-color: #fff;
+  }
+  .search input {
+    outline: none;
+    border: none;
+    background-color: var(--color-light-1);
+    border-bottom: 1px solid var(--color-grey);
+    padding: 5px 5px 5px 5px;
+  }
+  .search .icon-search {
+    fill: var(--color-grey);
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    padding-left: 30px;
+    transform: translate(-50%, -50%);
+  }
+  .search input::-webkit-input-placeholder {
+    color: var(--color-grey);
+    font-weight: 600;
+    font-size: 15px;
+  }
+  
+  .listing-actions {
+    display: grid;
+    margin: var(--layout-margin);
+    height: 60px;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    width: 77%;
+    transition: all 0.3s;
+  }
+  .listing-actions .heading-1 {
+    font-size: 28px;
+    color: var(--color-black);
+  }
+  .listing-actions .actions {
+    justify-self: end;
+  }
+  .listings::-webkit-scrollbar, .listings::-webkit-scrollbar-thumb {
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+  }
+  .listings {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .listings >
+  div.listing {
+    background-color: #fff;
+    padding: 25px;
+    margin: var(--layout-margin);
+  }
+  .listing {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    border-radius: 9px;
+    outline: none;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+    cursor: pointer;
+    box-shadow: 0px 10px 15px var(--default-shadow);
+  }
+  .listing:hover {
+    border: 2px solid var(--color-light-blue);
+  }
+  .listing_image {
+    display: block;
+    object-fit: cover;
+
+    width: 550px;
+    height: 310px;
+    overflow: hidden;
+    border-radius: 9px;
+  }
+  
+  .listing_heading{
+    grid-row: 1/2;
+    display: flex;
+    padding: 5px 5px 5px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .listing_description{
+    grid-template-rows: repeat(3, 1fr);
+  }
+  
+  .listing h4{
+    font-size: 22px;
+    color: var(--color-black);
+    font-weight: 400;
+  }
+  
+  .listing_type{
+    font-size: 22px;
+    color: var(--color-black);
+    font-weight: 400;
+
+  }
+  
+  .dash{
+    padding: 0 10px;
+  }
+  
+  .listing_info{
+    grid-row: 2/3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px 5px 20px;
+    color: var(--color-grey);
+  }
+  
+  .listing *{
+    padding-left: 10px;
+  
+  }
+  
+  .listing *:first-child{
+    padding-left: 0;
+  }
+  
+  .circle{
+    font-size: 5px;
+    margin-top: 5px;
+  }
+  
+  .listing_footer{
+    grid-row: 3 / -1;
+    padding: 5px 20px 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-grey);
+  }
+  
+  .price{
+    text-decoration: underline;
+
+    color:var(--color-light-blue);
+    font-size: 35px;
+    font-weight: 700;
+  }
+  
+  .property-details{
+    background-color: #fff;
+    position: relative;
+    height: 100vh;
+    width: 0%;
+    transition: all 0.3s;
+    display: grid;
+    grid-template-rows: 120px repeat(6, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+    row-gap: 10px;
+  }
+  
+  .active{
+    border:2px solid var(--color-light-blue) ;
+  }
+
+.btn{
+  margin-top: 30px;
+  margin-left: 50px;
+  width: 500px;
+    position: relative;
+  background: var(--orange-soda);
+  color: var(--white);
+  font-family: var(--ff-poppins);
+  font-size: var(--fs-5);
+  text-transform: var(--text-transform, capitalize);
+  border: 1px solid var(--orange-soda);
+  padding: 10px 20px;
+  z-index: 1;
+}
+
+.btn:is(:hover, :focus) {
+    background: var(--black);
+    color: var(--dark-jungle-green);
+    border-color: var(--black);
+  }
+  
+  .btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--white);
+    transition: var(--transition);
+    z-index: -1;
+  }
+  
+  .btn:is(:hover, :focus)::before { width: 100%; }
+
+  .bttn{
+    margin-top: 30px;
+    margin-left: 50px;
+    width: 500px;
+      position: relative;
+    background: var(--orange-soda);
+    color: var(--white);
+    font-family: var(--ff-poppins);
+    font-size: var(--fs-5);
+    text-transform: var(--text-transform, capitalize);
+    border: 1px solid var(--orange-soda);
+    padding: 10px 20px;
+    z-index: 1;
+  }
+  
+  .bttn:is(:hover, :focus) {
+      background: var(--black);
+      color: var(--dark-jungle-green);
+      border-color: var(--black);
+    }
+    
+    .bttn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: var(--white);
+      transition: var(--transition);
+      z-index: -1;
+    }
+    
+    .bttn:is(:hover, :focus)::before { width: 100%; }
+
+  h1{
+    justify-content: center;
+  }
+  

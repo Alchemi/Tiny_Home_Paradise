@@ -1,5 +1,5 @@
 export interface Product {
-    id: string,
+    propertyId: number,
     house_name: string,
     location: string,
     imageUrl: string,
@@ -9,5 +9,8 @@ export interface Product {
     size: number,
     year: number,
     mobility: string,
+    email:string,
+    phone:string
+    description:string
 
 }

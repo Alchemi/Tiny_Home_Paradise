@@ -71,10 +71,12 @@ const routes: Routes = [
  },
 
   {
-    path: 'property-details/:id',
+    path: 'property-details',
     component: PropertyDetailsComponent,
-    outlet: 'd',
+
+    
     ...canActivate(redirectToLogin)
+
   },
   {
     path: 'wish-list',

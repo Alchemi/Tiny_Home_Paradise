@@ -1,21 +1,45 @@
-<a class="back">
+<a class="back" #back>
     <svg class = "icon icon-back">
     <use href="./assets/icons.svg#icon-chevron-small-left"></use>
     </svg>
     </a>
-    <div class= "info-image">
-    <img src="{{ product?.imageUrl }}" alt=" " />
-    </div>
-    <div class = "property-info">
+
+    <span class= "info_image" *ngFor=" let product of property">
+    <img width ="50" height="50" src="{{ product?.imageUrl }}" alt=" " />
+    <br>
+    <div class ="description">{{product.description}}</div>
+    <br>
+    
+    
+    </span>
+    
+    <div class = "property_info" *ngFor=" let product of property">
+        <br>
     <h4 class="heading-4">{{ product?.location }}</h4>
+    <br>
     <span class="type"> {{ product?.house_name }}</span>
+    <br>
     <div class= "more ">
-    <span>{{ product.rooms }}</span>
-    <span>{{ product.baths }}</span>
-    <span> {{ product.size }}sq ft</span>
-    <span> {{ product.year }}</span>
-    <span> {{ product.mobility }}</span>
+    <span>Bedrooms: {{ product.rooms }}</span>
+    <br>
+    <span>Bathrooms: {{ product.baths }}</span>
+    <br>
+    <span>Size: {{ product.size }}sq ft</span>
+    <br>
+    <span>Built in: {{ product.year }}</span>
+    <br>
+    <span>Mobile: {{ product.mobility }}</span>
+    <br>
+    <br>
     </div>
-    <span class="price">${{ product.price }}</span>
+    <span class="price">Price: ${{ product.price | number:'4.2-5'}}</span>
     </div>
+    <br>
+    <br>
     <button class = "call ">Contact Seller</button>
+    <br>
+    <span>Seller's Email: {{ product.email }}</span>
+    <br>
+    <span>Seller's Phone Number: {{ product.phone }}</span>
+    <br>
+

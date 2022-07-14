@@ -9,13 +9,19 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class WishListService {
 
-  public wishItemList! : any[]
+  public wishItemList : any;
   public productList = new BehaviorSubject<any>([]);
-  public product_List:any;
+  public product : any;
+  
   constructor() { }
 
   getProducts(){
     return this.productList.asObservable();
+  }
+
+  setProduct(product : any){
+    this.wishItemList.push(...product);
+    this.productList.next(product);
   }
 
   addtoWishList(product : any){

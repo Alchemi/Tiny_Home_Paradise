@@ -13,7 +13,7 @@ export const elementAnimations = trigger('elementAnimations', [
             stagger(75, [
                 animate(
                     '0.5s ease-in-out',
-                    style({ opcaity:1, transform: 'translateY(0)'})
+                    style({ opacity:1, transform: 'translateY(0)'})
                 ),
             ]),
         ],
@@ -31,7 +31,7 @@ export const elementAnimations = trigger('elementAnimations', [
             stagger(75, [
                 animate(
                     '0.5s ease-in-out',
-                    style({ opcaity:1, transform: 'translateY(-15px)'}),
+                    style({ opacity:1, transform: 'translateY(-15px)'}),
                 ),
             ]),
         ],
@@ -50,7 +50,7 @@ transition('* => *', [
         stagger(75, [
             animate(
                 '0.5s ease-in-out',
-                style({ opcaity:1, transform: 'translateY(0)'})
+                style({ opacity:1, transform: 'translateY(0)'})
             ),
         ]),
     ],
