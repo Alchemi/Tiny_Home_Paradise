@@ -77,7 +77,8 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     ListingsComponent,
     PropertyDetailsComponent,
     SearchComponent,
-    WishListComponent
+    WishListComponent,
+    
 
 
 
