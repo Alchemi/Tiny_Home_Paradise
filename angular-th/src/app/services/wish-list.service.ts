@@ -19,7 +19,7 @@ export class WishListService {
   }
 
   addtoWishList(product : any){
-    this.wishItemList.push(product);
+    this.wishItemList.push(...product);
     this.productList.next(this.wishItemList);
     console.log(this.wishItemList)
   }

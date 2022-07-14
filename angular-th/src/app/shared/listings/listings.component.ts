@@ -49,14 +49,13 @@ export class ListingsComponent implements OnInit{
   // openState: OpenState;
 
   addtoWishList(item: any){
-
     this.wishListService.addtoWishList(item);
-    
+    window.alert("you have added this to your wishlist");
   }
   
 
   
-  public data:any=[]
+  public data: any=[]
   constructor(private afs : Firestore, private wishListService: WishListService,public ui: UiService, private cdr: ChangeDetectorRef, private router: Router) { 
     
   }
@@ -112,9 +111,7 @@ export class ListingsComponent implements OnInit{
    })
    
   }
-
-
-
+  
   searchText:string = '';
   onSearchKeywordEntered(searchValue:string){
     this.keywordText=searchValue;
