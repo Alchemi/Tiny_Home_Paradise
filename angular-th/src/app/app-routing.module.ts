@@ -24,8 +24,8 @@ const redirectToHome = () => redirectLoggedInTo(['']);
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'listings',
     pathMatch: 'full',
-    component: HomeComponent,
   },
   {
     path: 'login',
@@ -73,8 +73,10 @@ const routes: Routes = [
   {
     path: 'property-details',
     component: PropertyDetailsComponent,
+
     
     ...canActivate(redirectToLogin)
+
   },
   {
     path: 'wish-list',

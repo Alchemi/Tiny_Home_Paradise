@@ -1,8 +1,9 @@
-<a class="back">
+<a class="back" (click)="goBack()" #back>
     <svg class = "icon icon-back">
     <use href="./assets/icons.svg#icon-chevron-small-left"></use>
     </svg>
     </a>
+
     <div class= "info-image" *ngFor=" let product of property">
     <img width ="50" height="50" src="{{ product?.imageUrl }}" alt=" " />
     </div>
@@ -25,3 +26,4 @@
     </div>
     <br>
     <button class = "call ">Contact Seller</button>
+

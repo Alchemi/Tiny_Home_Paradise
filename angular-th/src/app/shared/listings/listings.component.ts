@@ -1,7 +1,7 @@
-import { ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, HostBinding, OnDestroy, OnInit, SimpleChanges, ViewChild, ViewEncapsulation, OnChanges, Output, EventEmitter, Input, AfterViewInit } from '@angular/core';
 import { Firestore, getDocs,collection } from '@angular/fire/firestore';
 import { Observable } from '@firebase/util';
-import { propertiesList } from 'app/helpers/propertiesList';
+// import { propertiesList } from 'app/helpers/propertiesList';
 import { Subject, subscribeOn, takeUntil } from 'rxjs';
 import { DataService } from '../data.service';
 import { Product } from 'app/model/product';
@@ -9,44 +9,49 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { OpenState, UiService } from 'app/services/ui.service';
 import { Router } from '@angular/router';
 
+
 import { } from 'rxjs';
 //import {gsap} from 'gsap';
+
 import { WishListService } from 'app/services/wish-list.service';
+import { ANIMATION_ELEMENT, elementAnimations } from 'app/animations/elementAnimations';
+
 
 
 @Component({
   selector: 'app-listings',
   templateUrl: './listings.component.html',
-  styleUrls: ['./listings.component.css'],
-  animations: [
-    trigger('property-detailsPage', [
-      state(
-        'open',
-        style({
-          opacity:1,
-          width:'30%',
-          transform:'translateX(0)',
-          visibility: 'visible'
-        })
-      ),
-      state(
-        'closed',
-        style({
-          opacity: 0,
-          width: '0%',
-          transform: 'translateX(80px)',
-          visibility: 'hidden'
-        })
-      ),
-      transition('closed => open', [animate('0.4s ease-out')]),
-      transition('open => closed', [animate('0.4s ease-out')]),
-    ])
-  ]
+  styleUrls: ['./listings.component.css'], encapsulation:ViewEncapsulation.ShadowDom,
+  // animations: [ [elementAnimations],
+  //   trigger('property-details', [
+  //     state(
+  //       'open',
+  //       style({
+  //         opacity:1,
+  //         width:'30%',
+  //         transform:'translateX(0)',
+  //         visibility: 'visible'
+  //       })
+  //     ),
+  //     state(
+  //       'closed',
+  //       style({
+  //         opacity: 0,
+  //         width: '0%',
+  //         transform: 'translateX(80px)',
+  //         visibility: 'hidden'
+  //       })
+  //     ),
+  //     transition('closed => open', [animate('0.4s ease-out')]),
+  //     transition('open => closed', [animate('0.4s ease-out')]),
+  //   ])
+  // ],
 })
 export class ListingsComponent implements OnInit{
-  // @ViewChild('nav', {static: true}) nav: ElementRef<HTMLUListElement>;
-  // destroyed$ = new Subject<void>;
-  // openState: OpenState;
+  // @HostBinding('@elementAnimations') animate: any;
+  // animationElement= ANIMATION_ELEMENT;
+  // destroyed$ = new Subject<void>();
+  // openState: OpenState = "open";
 
   addtoWishList(item: any){
 
@@ -55,27 +60,22 @@ export class ListingsComponent implements OnInit{
   }
   
 
-  
   public data:any=[]
-  constructor(private afs : Firestore, private wishListService: WishListService,public ui: UiService, private cdr: ChangeDetectorRef, private router: Router) { 
-    
-  }
-  
-
+  constructor(private afs : Firestore, private wishListService: WishListService, public ui:UiService, private cdr: ChangeDetectorRef, private router: Router) {  }
   
  ngOnInit(): void {
-
-
     this.getProperties();
-    
-    
+
     // this.ui
-    // .getOpenState()
-    // .pipe(takeUntil(this.destroyed$))
-    // .subscribe((openState: OpenState) => {
-    //   this.openState = openState;
-    //   this.cdr.detectChanges();
-    // });
+    //  .getOpenState().pipe(takeUntil(this.destroyed$)).subscribe((openState: OpenState | any) => {
+    //    this.openState = openState;
+    //    this.cdr.detectChanges();
+    //  });
+
+    //   this.productList=[];
+    //  this.productList.forEach((a:any) =>{
+    //   Object.assign(a,{quantity:1})
+    //  })
   }
 
   // ngOnDestroy() {
@@ -83,12 +83,39 @@ export class ListingsComponent implements OnInit{
   //   this.destroyed$.complete();
   // }
 
-
-  // onNavigate(link: string) {
-  //   if(this.router.url.startsWith('/listings') && link != '/listings') {
-  //     this.ui.openState.next('closed');
-  //   }
+  
+  // ngAfterViewInit(){
   // }
+
+  // animationDone(event: { element: HTMLDivElement; }){
+  //   console.log(event.element);
+  //   (event.element as HTMLDivElement).childNodes.forEach((item) =>{
+  //     const node =item as HTMLDivElement;
+  //     if (node.classList && node.classList.contains('active')){
+  //       console.log(node);
+
+  //       node.scrollIntoView({behavior:'smooth'});
+  //     }
+  //   })
+  // }
+
+//   @Output()product:any;
+//   house_name:any;
+//   imageUrl:any;
+//   location:any;
+//   rooms:any;
+//   baths:any;
+//   size:any;
+//   price:any;
+//   year:any;
+//   mobility:any;
+
+ onNavigate(){
+  }
+
+
+  
+
 
   zipcodeText:string = '';
   minText:any ='';
@@ -154,10 +181,15 @@ export class ListingsComponent implements OnInit{
     console.log(this.mobilityText);
   }
 
+
   navigate(item:any){
     localStorage.setItem('prop',item)
     console.log(item)
     this.router.navigate(['property-details'])
   }
+
   
+  // @Input()
+  // navigateChanged: EventEmitter<any> = new EventEmitter<any>();
+    
 }

@@ -10,6 +10,7 @@ import { WishListService } from 'app/services/wish-list.service';
 export class WishListComponent implements OnInit {
 
   prodL: Product[] =[];
+  public product : any;
 
   constructor(private wishListService:WishListService) { }
 
@@ -19,6 +20,10 @@ export class WishListComponent implements OnInit {
     
 }
   ngOnInit(): void {
+    this.wishListService.getProducts().subscribe(res=> {
+      this.product =res;
+      
+    })
   }
 
 }
