@@ -18,8 +18,8 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'listings',
     pathMatch: 'full',
-    component: HomeComponent,
   },
   {
     path: 'login',
@@ -57,9 +57,8 @@ const routes: Routes = [
  
 
   {
-    path: 'property-details/:id',
+    path: 'property-details',
     component: PropertyDetailsComponent,
-    outlet: 'd',
   },
   {
     path: 'wish-list',

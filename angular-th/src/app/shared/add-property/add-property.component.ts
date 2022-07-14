@@ -58,6 +58,7 @@ export class AddPropertyComponent implements OnInit {
     submit(value:any)
     {
       let newProduct = {
+        propertyId: value.propertyId,
         house_name: value.house_name,
           location: value.location,
           imageUrl:value.image,

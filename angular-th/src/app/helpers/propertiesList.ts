@@ -2,7 +2,7 @@ import { Product } from "../model/product"
 
 export const propertiesList: Product[] = [
     {
-       id: '',
+       propertyId: 1,
        house_name : "Tiny Townhouse",
        location: "Austin TX 99999",
        rooms: 3,
@@ -14,7 +14,7 @@ export const propertiesList: Product[] = [
        imageUrl: ""
     },
     {
-       id: '',
+       propertyId: 2,
        house_name : "Mini Mansion",
        location: "Tacoma Wa 888888",
        rooms: 4,
