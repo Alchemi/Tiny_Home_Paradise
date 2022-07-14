@@ -577,7 +577,7 @@ button, a { transition: var(--transition); }
 
 .service-card .card-text {
   color: var(--cadet);
-  font-size: var(--fs-5);
+  font-size: large;
   line-height: 1.8;
   margin-bottom: 25px;
 }
