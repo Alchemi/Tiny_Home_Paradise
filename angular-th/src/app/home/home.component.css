@@ -1,12 +1,26 @@
+<<<<<<< HEAD
+=======
+.banner
+{
+  font-size: large;
+  background-image: url('../../assets/images/hpth1.png');
+    height: 400px;
+    background-position: center top;
+    background-size: cover;
+}
+
+>>>>>>> 5454ed1123ce7aa60ff5c90673b48abb3faa61b1
 
 .content
 {
+  font-size: large;
     top: 30%;
     left: 20%;
     position: absolute;
 }
 .content h1
 {
+  font-size: large;
     color: #fff;
     font-size: 60px;
     font-weight: bold;
@@ -14,6 +28,7 @@
 }
 .content a
 {
+  font-size: large;
     text-decoration: none;
     background-color: #fff;
     color: var(--primary-color);
@@ -23,6 +38,7 @@
 
 .content a:hover
 {
+  font-size: 200px;
     background-color: var(--primary-color);
     color: #fff;
 }

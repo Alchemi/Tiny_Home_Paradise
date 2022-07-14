@@ -8,7 +8,8 @@
 (searchMinSizeChanged)="onSearchMinSizeEntered($event)"
 (searchMaxSizeChanged)="onSearchMaxSizeEntered($event)"
 (searchBedChanged)="onBedroomEntered($event)"
-(searchBathChanged)="onBathroomEntered($event)">
+(searchBathChanged)="onBathroomEntered($event)"
+(searchMobilityChanged)="onMobilityEntered($event)">
 </app-search> 
 
 <!-- <div class= "search ">
@@ -32,6 +33,7 @@
     <div *ngIf="(minSizeText==='' || maxSizeText==='')||(item.size>=minSizeText && item.size<=maxSizeText)">
     <div *ngIf="(bedroomText==0)||(item.rooms==bedroomText)">
     <div *ngIf="(bathroomText==0)||(item.baths==bathroomText)">
+    <div *ngIf="(mobilityText==='')||(item.mobility.toLowerCase().includes(mobilityText.toLowerCase()))">
          <div class = "listing_description ">
             <button class="button" (click)=addtoWishList(item)>
                     Add to Wish List

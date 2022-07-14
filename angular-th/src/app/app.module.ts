@@ -26,6 +26,7 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
 import { AngularMaterialModule } from './angular-material.module';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
+
 /* FormsModule */
 
 /* Angular Flex Layout */
@@ -41,7 +42,7 @@ import { AddPropertyComponent } from './shared/add-property/add-property.compone
 
 import { ListingsComponent } from './shared/listings/listings.component';
 import { PropertyDetailsComponent } from './shared/property-details/property-details.component';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { ProfileComponent } from './profile/profile.component';
 import { WishListComponent } from './shared/wish-list/wish-list.component';
 import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
@@ -50,6 +51,7 @@ import { provideFunctions,getFunctions } from '@angular/fire/functions';
 import { provideMessaging,getMessaging } from '@angular/fire/messaging';
 import { providePerformance,getPerformance } from '@angular/fire/performance';
 import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 
 
@@ -75,13 +77,16 @@ import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config
     ListingsComponent,
     PropertyDetailsComponent,
     SearchComponent,
-    WishListComponent
+    WishListComponent,
+    
 
 
 
 
   ],
   imports: [
+    AngularFirestoreModule,
+    AngularFireStorageModule,
     BrowserModule,
     AppRoutingModule,
     AngularMaterialModule,

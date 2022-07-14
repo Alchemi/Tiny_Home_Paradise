@@ -1,8 +1,13 @@
-body{
-    background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
-}
+.bg {
+    opacity: 0.3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    object-fit: cover;
+  }
+
 .contact-form{
-    background: #fff;
+   background-color: rgba(57, 56, 56, 0.409);
     margin-top: 10%;
     margin-bottom: 5%;
     width: 70%;
