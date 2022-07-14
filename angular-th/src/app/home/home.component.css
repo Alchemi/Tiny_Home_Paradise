@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 .banner
 {
   font-size: large;
@@ -9,18 +7,17 @@
     background-size: cover;
 }
 
->>>>>>> 5454ed1123ce7aa60ff5c90673b48abb3faa61b1
 
 .content
 {
-  font-size: large;
+  font-size: larger;
     top: 30%;
     left: 20%;
     position: absolute;
 }
 .content h1
 {
-  font-size: large;
+  font-size: larger;
     color: #fff;
     font-size: 60px;
     font-weight: bold;
@@ -191,7 +188,7 @@ padding-left:35px;
 .hero-title{
   text-align:center;
   width:100%;
-  height: -50px;
+  height: -4px;
   margin: auto;
   text-align: center;
   margin-top: 0px;
