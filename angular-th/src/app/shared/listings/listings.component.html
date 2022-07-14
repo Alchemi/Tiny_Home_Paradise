@@ -12,6 +12,8 @@
 (searchMobilityChanged)="onMobilityEntered($event)">
 </app-search> 
 
+
+    
 <!-- <div class= "search ">
     <label for= "search">
     <svg class="icon icon-search">
@@ -20,13 +22,14 @@
     </label>
     <input id="search" type=" text" placeholder= "Search" />
 </div> -->
-<div class = "listing-full">
-<div class= "listing-actions">
-    <h1 class="heading-1">All Listings</h1>
-    
-</div>
+
+
+
+
+
 <div class="listings">
- <div class="listing" *ngFor="let item of data">
+ <div class="listing" *ngFor=" let item of data">
+ <div class="listing_image"><img [src]="item.imageUrl"></div>
     <div *ngIf="keywordText ===''|| item.house_name.toLowerCase().includes(keywordText.toLowerCase())">
     <div *ngIf="zipcodeText ===''|| item.location.toLowerCase().includes(zipcodeText.toLowerCase())">
     <div *ngIf="(minText===''|| maxText==='')||(item.price>=minText && item.price<=maxText)">
@@ -35,31 +38,43 @@
     <div *ngIf="(bathroomText==0)||(item.baths==bathroomText)">
     <div *ngIf="(mobilityText==='')||(item.mobility.toLowerCase().includes(mobilityText.toLowerCase()))">
          <div class = "listing_description ">
-            <button class="btn">
-                Add To Wishlist
-        </button>
-        <br>
-            <button class="btn" (click)="navigate(item.house_name)">
-                View Property Details
-        </button>
+            
+        
+            
             <div class = "listing_heading">
                 <h4 class="heading-4 ">{{ item.house_name }}</h4>
-                <div class="image"><img [src]="item.imageUrl"></div>
                 <span class="dash ">&mdash; </span>
-                <span class = "type"> {{ item.location }}</span>
+                <h4 class = "listing_type"> {{ item.location }}</h4>
             </div>
-            <div class= "listing_info">
-                <span class="rooms"> {{item.rooms }} bedrooms</span>
+            
+            <div class= "listing_info row">
+                <span class="rooms col-2"> {{item.rooms }} bedrooms</span>
                 <span class= "circle">&#11044; </span>
-                <span class="baths">{{ item.baths }} bathrooms</span>
+                <span class="baths col-2">{{ item.baths }} bathrooms</span>
                 <span class= "circle">&#11044; </span>
-                <span class="size"> {{ item.size }} sq ft</span>
+                <span class="size col-2"> {{ item.size }} sq ft</span>
             </div>
+            
+            
             <div class= "listing_footer">
-                <span class= "price">${{ item.price }}</span>
-                <span class= "year">ETC. {{ item.year}}</span>
-                <span class= "mobility">{{ item.mobility}}</span>
+                
+                <span class= "year">EST. {{ item.year}}</span>
+                <span class= "circle">&#11044; </span>
+                <span class= "mobility">Mobile:{{ item.mobility}}</span>
+                <span class= "circle">&#11044; </span>
+                
             </div>
+            <div><span class= "price">${{ item.price | number:'4.2-5'}}</span>
+            
+        </div>
+        <button class="btn" (click)="navigate(item.house_name)">
+            View Property Details
+    </button>
+    <br>
+        <button class="btn" (click)=addtoWishList(item)>
+            Add to Wish List
+    </button>
+        
          </div>
          
     </div>
@@ -69,9 +84,7 @@
     </div>
  </div>
     </div>
-    
-    
-</div>
+    </div>
 
 
 

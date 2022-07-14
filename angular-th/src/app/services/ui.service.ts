@@ -7,7 +7,7 @@ export type OpenState = 'open' | 'closed';
   providedIn: 'root'
 })
 export class UiService {
-openState= new BehaviorSubject<OpenState>('closed');
+openState= new BehaviorSubject<OpenState>('open');
 
   constructor() { }
 

@@ -1,6 +1,12 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { collection, Firestore, getDocs, limit, query, where } from '@angular/fire/firestore';
+import { Component, ElementRef, HostBinding, Input, OnInit, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ANIMATION_ELEMENT } from 'app/animations/elementAnimations';
 import { Product } from 'app/model/product';
+import { UiService } from 'app/services/ui.service';
+import { DataService } from '../data.service';
+import {gsap} from 'gsap'
+import { Firestore, getDocs, collection, limit, query, where } from '@angular/fire/firestore';
+
 
 @Component({
   selector: 'app-property-details',
@@ -8,6 +14,30 @@ import { Product } from 'app/model/product';
   styleUrls: ['./property-details.component.css']
 })
 export class PropertyDetailsComponent implements OnInit {
+  // @HostBinding('elementAnimations')
+  // id:number | any;
+  // animationElement = ANIMATION_ELEMENT;
+
+  // @ViewChild('info', {static:true}) info!: ElementRef<HTMLDivElement>;
+  // @ViewChild('back', {static:true}) back!: ElementRef<HTMLAnchorElement>;
+  // @ViewChild('image', {static:true}) image!: ElementRef<HTMLDivElement>;
+  // @ViewChild('call', {static:true}) call!: ElementRef<HTMLButtonElement>;
+
+  // @Input() product2: any; 
+  // @Input() imageUrl:any;
+  // @Input() house_name= "asdpf";
+  // @Input() location:any;
+  // @Input() baths:any;
+  // @Input() rooms:any;
+  // @Input() size:any;
+  // @Input() price:any;
+  // @Input() year:any;
+  // @Input() mobility: any;
+
+  // productList =  localStorage.getItem("key");
+  // public cu: any;
+  // item: any;
+
   
 
   constructor(private firestore:Firestore) { }

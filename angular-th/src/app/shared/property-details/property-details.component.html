@@ -1,4 +1,4 @@
-<a class="back">
+<a class="back" #back>
     <svg class = "icon icon-back">
     <use href="./assets/icons.svg#icon-chevron-small-left"></use>
     </svg>
@@ -22,6 +22,12 @@
     <br>
     </div>
     <span class="price">Price: ${{ product.price }}</span>
-    </div>
+    
     <br>
     <button class = "call ">Contact Seller</button>
+    <br>
+    <span>Seller's Email: {{ product.email }}</span>
+    <br>
+    <span>Seller's Phone Number: {{ product.phone }}</span>
+    <br>
+</div>
