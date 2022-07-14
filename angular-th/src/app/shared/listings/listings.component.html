@@ -24,13 +24,14 @@
 
 
 
-<div class= "listing-actions" ng-Style="(ui.getOpenState() | async) === 'open' && {width:'96%'}">
-    <h1 class="heading-1" [ngClass]="animationElement">All Listings</h1>
+<div class= "listing-actions">
+
+    <h1 class="heading-1">All Listings</h1>
     
 </div>
 
 <div class="listings">
- <div class="listing">
+ <div class="listing" *ngFor="let item of data">
  <div class="listing_image"><img [src]="item.imageUrl"></div>
     <div *ngIf="keywordText ===''|| item.house_name.toLowerCase().includes(keywordText.toLowerCase())">
     <div *ngIf="zipcodeText ===''|| item.location.toLowerCase().includes(zipcodeText.toLowerCase())">
@@ -42,10 +43,7 @@
     <div *ngIf="(mobilityText==='')||(item.mobility.toLowerCase().includes(mobilityText.toLowerCase()))">
          <div class = "listing_description ">
           
-        <br>
-            <button class="btn" (click)="navigate(item.house_name)">
-                View Property Details
-        </button>
+        
 
 
         
@@ -78,10 +76,15 @@
             <div><span class= "price">${{ item.price | number:'4.2-5'}}</span>
             
         </div>
-        <button class="btn" (click)=addtoWishList(item)>
+        <div class="row">
+        <button class="btn col-2" (click)=addtoWishList(item)>
             Add to Wish List
     </button>
-        
+   
+    <button class="bttn col-2" (click)="navigate(item.house_name)">
+        View Property Details
+    </button>
+</div>
          </div>
          
     </div>
