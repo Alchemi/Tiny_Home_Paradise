@@ -50,14 +50,16 @@ export class SignupComponent implements OnInit {
    
      
      
-     this.authService.signup(value.email, value.password).subscribe(()=>{
-      alert("User successfully registered");
-      this.authService.addUser(newUser)
-      this.router.navigate(['']);
-    });
+     this.authService.signup(value.email, value.password).subscribe({
+      next:(v)=>this.authService.addUser(newUser),
+      error:(e)=>console.error(this.msgError="Verify information, email already registered!"),
+      complete:()=> this.router.navigate([""])
+      });
+      
+    }
     
   
    }
    
-  }
+  
 

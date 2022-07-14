@@ -67,7 +67,7 @@ export class ListingsComponent implements OnInit{
 
 
     this.getProperties();
-
+    
     
     // this.ui
     // .getOpenState()
@@ -91,13 +91,14 @@ export class ListingsComponent implements OnInit{
   // }
 
   zipcodeText:string = '';
-  minText:number =0;
-  maxText:number =0;
-  minSizeText:number =0;
-  maxSizeText:number =0;
+  minText:any ='';
+  maxText:any ='';
+  minSizeText:any='';
+  maxSizeText:any ='';
   bedroomText:number =0;
   bathroomText:number =0;
   keywordText:string='';
+  mobilityText:string='';
   
   dbInstance = collection(this.afs, 'products')
   getProperties(){
@@ -111,6 +112,7 @@ export class ListingsComponent implements OnInit{
    })
    
   }
+
 
 
   searchText:string = '';
@@ -146,6 +148,10 @@ export class ListingsComponent implements OnInit{
   onBathroomEntered(searchValue:number){
     this.bathroomText = searchValue;
     console.log(this.bathroomText);
+  }
+  onMobilityEntered(searchValue:string){
+    this.mobilityText = searchValue;
+    console.log(this.mobilityText);
   }
 
 
