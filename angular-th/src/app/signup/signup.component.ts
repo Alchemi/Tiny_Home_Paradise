@@ -21,7 +21,7 @@ export class SignupComponent implements OnInit {
     password:String,
     phone:String,
     username:String,
-    zipcode:String
+    address:String
   }
 
   constructor(private authService:AuthenticationService,
