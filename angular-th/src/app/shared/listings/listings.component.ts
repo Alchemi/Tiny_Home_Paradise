@@ -54,14 +54,23 @@ export class ListingsComponent implements OnInit{
   // openState: OpenState = "open";
 
   addtoWishList(item: any){
-
     this.wishListService.addtoWishList(item);
+    window.alert("you have added this to your wishlist");
+  }
+  
+
+
+  public data:any=[]
+  constructor(private afs : Firestore, private wishListService: WishListService, public ui:UiService, private cdr: ChangeDetectorRef, private router: Router) {  }
+
+  
+  public data: any=[]
+  constructor(private afs : Firestore, private wishListService: WishListService,public ui: UiService, private cdr: ChangeDetectorRef, private router: Router) { 
     
   }
   
 
-  public data:any=[]
-  constructor(private afs : Firestore, private wishListService: WishListService, public ui:UiService, private cdr: ChangeDetectorRef, private router: Router) {  }
+
   
  ngOnInit(): void {
     this.getProperties();
@@ -138,9 +147,7 @@ export class ListingsComponent implements OnInit{
    })
    
   }
-
-
-
+  
   searchText:string = '';
   onSearchKeywordEntered(searchValue:string){
     this.keywordText=searchValue;
