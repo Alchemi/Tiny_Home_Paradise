@@ -37,7 +37,13 @@
     <div *ngIf="(bathroomText==0)||(item.baths==bathroomText)">
     <div *ngIf="(mobilityText==='')||(item.mobility.toLowerCase().includes(mobilityText.toLowerCase()))">
          <div class = "listing_description ">
+
             
+        
+            
+
+            
+
             <div class = "listing_heading">
                 <h4 class="heading-4 ">{{ item.house_name }}</h4>
                 <span class="dash ">&mdash; </span>
@@ -66,10 +72,7 @@
         </div>
         
     
-        <button class="btn" (click)=addtoWishList(item)>
-            Add to Wish List
-        </button>
-        <br>
+     
         <button class="btn" (click)="navigate(item.house_name)">
             View Property Details
         </button>
