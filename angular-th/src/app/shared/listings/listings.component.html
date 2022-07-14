@@ -24,11 +24,7 @@
 
 
 
-<div class= "listing-actions">
 
-    <h1 class="heading-1">All Listings</h1>
-    
-</div>
 
 <div class="listings">
  <div class="listing" *ngFor="let item of data">
@@ -39,15 +35,13 @@
     <div *ngIf="(minSizeText==='' || maxSizeText==='')||(item.size>=minSizeText && item.size<=maxSizeText)">
     <div *ngIf="(bedroomText==0)||(item.rooms==bedroomText)">
     <div *ngIf="(bathroomText==0)||(item.baths==bathroomText)">
-
     <div *ngIf="(mobilityText==='')||(item.mobility.toLowerCase().includes(mobilityText.toLowerCase()))">
          <div class = "listing_description ">
-          
-        
 
-
+            
         
-         <div class = "listing_description ">
+            
+
             
 
             <div class = "listing_heading">

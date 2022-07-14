@@ -8,8 +8,9 @@ export interface Product {
     size: number,
     year: number,
     mobility: string,
-    description:string
     email:string,
     phone:string
+    description:string
+    
 
 }

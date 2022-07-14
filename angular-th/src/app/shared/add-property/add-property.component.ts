@@ -20,6 +20,9 @@ export class AddPropertyComponent implements OnInit {
         size: Number,
         year: Number,
         mobility:String,
+        fullName:String,
+        email:String,
+        phone:String
     }
   
     constructor(private data : DataService, private router : Router) { }
@@ -68,6 +71,9 @@ export class AddPropertyComponent implements OnInit {
           size: value.size,
           year: value.year,
           mobility:value.mobility,
+          fullName:value.fullName,
+          email:value.email,
+          phone:value.phone
       }
       console.log(location);
       this.data.addProduct(newProduct).then(() => {

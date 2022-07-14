@@ -21,7 +21,9 @@ export class SignupComponent implements OnInit {
     password:String,
     phone:String,
     username:String,
-    zipcode:String
+    
+    photoURL:String,
+    address:String
   }
 
   constructor(private authService:AuthenticationService,
@@ -34,7 +36,7 @@ export class SignupComponent implements OnInit {
   submit(value:any){
     
     if(value.password !== value.confirmPassword){
-      this.msgError="Passwords must match!!"
+      this.msgError="Passwords must match!! And be atleast 6 characters"
       return;
     }
     
@@ -45,7 +47,8 @@ export class SignupComponent implements OnInit {
       password:value.password,
       phone:value.phone,
       username:value.username,
-      zipcode:value.zipcode
+      address:value.address,
+      photoUrl:value.photoURL
     }
    
      

@@ -54,9 +54,8 @@ export class ListingsComponent implements OnInit{
   // openState: OpenState = "open";
 
   addtoWishList(item: any){
-
     this.wishListService.addtoWishList(item);
-    
+    window.alert("you have added this to your wishlist");
   }
   
 
@@ -65,7 +64,6 @@ export class ListingsComponent implements OnInit{
   
  ngOnInit(): void {
     this.getProperties();
-
     // this.ui
     //  .getOpenState().pipe(takeUntil(this.destroyed$)).subscribe((openState: OpenState | any) => {
     //    this.openState = openState;
@@ -139,9 +137,7 @@ export class ListingsComponent implements OnInit{
    })
    
   }
-
-
-
+  
   searchText:string = '';
   onSearchKeywordEntered(searchValue:string){
     this.keywordText=searchValue;
@@ -181,13 +177,11 @@ export class ListingsComponent implements OnInit{
     console.log(this.mobilityText);
   }
 
-
   navigate(item:any){
     localStorage.setItem('prop',item)
     console.log(item)
     this.router.navigate(['property-details'])
   }
-
   
   // @Input()
   // navigateChanged: EventEmitter<any> = new EventEmitter<any>();

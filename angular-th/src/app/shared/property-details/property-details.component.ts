@@ -1,6 +1,8 @@
 
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, HostBinding, Input, OnInit, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
 import { collection, Firestore, getDocs, limit, query, where } from '@angular/fire/firestore';
+
+
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ANIMATION_ELEMENT } from 'app/animations/elementAnimations';
 
@@ -40,7 +42,6 @@ export class PropertyDetailsComponent implements OnInit {
   // item: any;
 
 
-
   constructor(private firestore:Firestore, private router : Router) { }
 
   product!: Product; 
@@ -49,25 +50,16 @@ export class PropertyDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPropDetail(this.prop)
-
-}
-
-async getPropDetail(prop:any) {
+  }
+  async getPropDetail(prop:any) {
     
 
-
-  const cuRef = collection(this.firestore, 'products')
-  const q = query(cuRef, where("house_name", "==", prop), limit(1))
-  const querySnapshot = await getDocs(q).then((response) => {
-    this.property= [...response.docs.map((item) =>{
-      return {...item.data(), id: item.id}
-    })]
-    
-   })
-}
-
-goBack(){
-  this.router.navigate(['listings'])
-}
-
-}
+    const cuRef = collection(this.firestore, 'products')
+    const q = query(cuRef, where("house_name", "==", prop), limit(1))
+    const querySnapshot = await getDocs(q).then((response) => {
+      this.property= [...response.docs.map((item) =>{
+        return {...item.data(), id: item.id}
+      })]
+      
+     })
+}}

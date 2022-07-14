@@ -10,14 +10,14 @@
 
 .content
 {
-  font-size: large;
+  font-size: larger;
     top: 30%;
     left: 20%;
     position: absolute;
 }
 .content h1
 {
-  font-size: large;
+  font-size: larger;
     color: #fff;
     font-size: 60px;
     font-weight: bold;
