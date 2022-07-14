@@ -17,6 +17,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { canActivate, redirectUnauthorizedTo, redirectLoggedInTo} from '@angular/fire/auth-guard';
 import { SuccessComponent } from './pages/success/success.component';
+import { ContactSellerComponent } from './shared/contact-seller/contact-seller.component';
 
 const redirectToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectToHome = () => redirectLoggedInTo(['']);
@@ -69,6 +70,11 @@ const routes: Routes = [
   path:'success',
   component: SuccessComponent
  },
+
+ {
+  path: 'property-details/contact-seller',
+  component: ContactSellerComponent
+},
 
   {
     path: 'property-details',
