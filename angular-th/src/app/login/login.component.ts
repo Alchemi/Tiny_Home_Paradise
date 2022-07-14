@@ -10,7 +10,7 @@ import { AuthenticationService } from '../services/authentication.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+msgError ="";
  
 
   constructor( private authService: AuthenticationService, 
@@ -25,8 +25,12 @@ export class LoginComponent implements OnInit {
     
     console.log(value)
     
-     this.authService.login(value.email, value.password).subscribe(()=>{  
-      this.router.navigate(['']);})
+     this.authService.login(value.email, value.password).subscribe({
+      next:(v)=>localStorage.setItem('what', value.email),
+      error:(e)=>console.error(this.msgError="Email or password incorrect"),
+      complete:()=> this.router.navigate([''])
+      
+      })
      
     
   }

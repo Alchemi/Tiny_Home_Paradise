@@ -72,7 +72,7 @@ export class AddPropertyComponent implements OnInit {
       console.log(location);
       this.data.addProduct(newProduct).then(() => {
       alert("Property successfully registered");
-      this.router.navigate(['']);
+      this.router.navigate(['/success']);
     })}
     
     updateProduct(){

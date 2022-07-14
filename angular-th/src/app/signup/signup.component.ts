@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EmailAuthCredential } from '@firebase/auth';
 import { catchError } from 'rxjs';
-
+import { Auth, createUserWithEmailAndPassword } from '@angular/fire/auth';
 import { __values } from 'tslib';
 import { AuthenticationService } from '../services/authentication.service';
+import { Firestore, collection, doc} from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-signup',
@@ -24,7 +25,8 @@ export class SignupComponent implements OnInit {
   }
 
   constructor(private authService:AuthenticationService,
-    private router: Router) { }
+    private router: Router){}
+    
 
   ngOnInit(): void {
   }
@@ -48,14 +50,16 @@ export class SignupComponent implements OnInit {
    
      
      
-     this.authService.signup(value.email, value.password).subscribe(()=>{
-      alert("User successfully registered");
-      this.authService.addUser(newUser)
-      this.router.navigate(['']);
-    });
+     this.authService.signup(value.email, value.password).subscribe({
+      next:(v)=>this.authService.addUser(newUser),
+      error:(e)=>console.error(this.msgError="Verify information, email already registered!"),
+      complete:()=> this.router.navigate([""])
+      });
+      
+    }
     
   
    }
    
-  }
+  
 

@@ -11,6 +11,8 @@ import {
   UserCredential,
 } from '@angular/fire/auth';
 import { concatMap, Observable, of, switchMap } from 'rxjs';
+import { ProfileUser } from 'app/models/user';
+import { FileI } from 'app/models/file.interface';
 
 // const httpOptions ={
 //   headers: new HttpHeaders({
@@ -57,6 +59,11 @@ export class AuthenticationService {
          })
        );
      }
+     
+  
+   
+    }
+  
   // sign(newUser:any){
   //   return this.http.post<any>("http://localhost:3000/THP/authcontroller", newUser, httpOptions)
   //   .subscribe({
@@ -66,5 +73,5 @@ export class AuthenticationService {
   //   })
    
         
-  }
+  
 

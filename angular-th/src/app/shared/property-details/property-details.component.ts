@@ -1,6 +1,11 @@
+
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { collection, Firestore, getDocs, limit, query, where } from '@angular/fire/firestore';
+
 import { Component, ElementRef, HostBinding, Input, OnInit, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ANIMATION_ELEMENT } from 'app/animations/elementAnimations';
+
 import { Product } from 'app/model/product';
 import { UiService } from 'app/services/ui.service';
 import { DataService } from '../data.service';
@@ -41,6 +46,15 @@ export class PropertyDetailsComponent implements OnInit {
   constructor(public route: ActivatedRoute, private router: Router, public ui: UiService, private data : DataService, private firestore: Firestore) { }
 
 
+  constructor(private firestore:Firestore) { }
+
+  product!: Product; 
+  prop = localStorage.getItem('prop')
+  property:any;
+  ngOnInit(): void {
+    this.getPropDetail(this.prop)
+
+
 
   ngOnInit(): void {
 
@@ -55,61 +69,18 @@ export class PropertyDetailsComponent implements OnInit {
     
 
     // console.log("asf")
+
   }
-
-  // ngOnChanges(productList: SimpleChanges) {
-  //   productList['house_name']
-  //   console.log('ngOnChanges called!')
-  // }
-
-  // initDetailAnimations(){
-  //   console.log("asdf")
-  //   gsap.from(this.back.nativeElement, {
-  //     duration:0.5,
-  //     opacity: 0,
-  //     x: -10,
-  //     delay: 0.2
-  //   });
-  //   gsap.from(this.image.nativeElement, {
-  //     duration:0.5,
-  //     opacity: 0,
-  //     x: -15,
-  //     delay: 0.4
-  //   });
-  //   gsap.from(this.info.nativeElement, {
-  //     duration:0.5,
-  //     opacity: 0,
-  //     x: -15,
-  //     stagger: 0.2,
-  //     delay: 0.5
-  //   });
-  //   gsap.from(this.call.nativeElement, {
-  //     duration:0.5,
-  //     opacity: 0,
-  //     x: -15,
-  //     delay: 0.7
-  //   });
-
-  // }
-
-// ngAfterViewInit(){
-//   console.log("asdf")
-//   if (this.router.isActive(this.router.url, {paths: 'exact', queryParams: 'exact', fragment: 'ignored', matrixParams: 'ignored'})){
-//     this.ui.openState.next('open');
-//   }
-// }
-
-// goBack(){
-//   this.router.navigateByUrl('listings');
-//   this.ui.openState.next('closed');
-// }
-
-// onChangeEntered(searchValue: any){
-//   this.product2=searchValue;
-//   console.log("asd")
-// }
+  async getPropDetail(prop:any) {
+    
 
 
-
-
-}
+    const cuRef = collection(this.firestore, 'products')
+    const q = query(cuRef, where("house_name", "==", prop), limit(1))
+    const querySnapshot = await getDocs(q).then((response) => {
+      this.property= [...response.docs.map((item) =>{
+        return {...item.data(), id: item.id}
+      })]
+      
+     })
+}}

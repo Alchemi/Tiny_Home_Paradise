@@ -26,6 +26,7 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
 import { AngularMaterialModule } from './angular-material.module';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
+
 /* FormsModule */
 
 /* Angular Flex Layout */
@@ -41,9 +42,16 @@ import { AddPropertyComponent } from './shared/add-property/add-property.compone
 
 import { ListingsComponent } from './shared/listings/listings.component';
 import { PropertyDetailsComponent } from './shared/property-details/property-details.component';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { ProfileComponent } from './profile/profile.component';
 import { WishListComponent } from './shared/wish-list/wish-list.component';
+import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideFunctions,getFunctions } from '@angular/fire/functions';
+import { provideMessaging,getMessaging } from '@angular/fire/messaging';
+import { providePerformance,getPerformance } from '@angular/fire/performance';
+import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 
 
@@ -55,8 +63,6 @@ import { WishListComponent } from './shared/wish-list/wish-list.component';
     SignupComponent,
     HomeComponent,
     ProfileComponent,
-
-
     HeaderComponent,
     FooterComponent,
     ProductComponent,
@@ -66,21 +72,21 @@ import { WishListComponent } from './shared/wish-list/wish-list.component';
     HomeComponent,
     ContactComponent,
     FooterComponent,
-
-
     SearchComponent,
     AddPropertyComponent,
     ListingsComponent,
     PropertyDetailsComponent,
-
     SearchComponent,
-      WishListComponent
+    WishListComponent,
+    
 
 
 
 
   ],
   imports: [
+    AngularFirestoreModule,
+    AngularFireStorageModule,
     BrowserModule,
     AppRoutingModule,
     AngularMaterialModule,
@@ -99,8 +105,14 @@ import { WishListComponent } from './shared/wish-list/wish-list.component';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(()=>getStorage()),
+    provideAnalytics(() => getAnalytics()),
+    provideDatabase(() => getDatabase()),
+    provideFunctions(() => getFunctions()),
+    provideMessaging(() => getMessaging()),
+    providePerformance(() => getPerformance()),
+    provideRemoteConfig(() => getRemoteConfig()),
   ],
-  providers: [AngularFirestore],
+  providers: [AngularFirestore, ScreenTrackingService,UserTrackingService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

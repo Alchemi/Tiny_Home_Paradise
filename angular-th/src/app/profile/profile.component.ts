@@ -2,72 +2,87 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { HotToastService } from '@ngneat/hot-toast';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { switchMap, tap } from 'rxjs';;
+import { concatMap, switchMap, tap } from 'rxjs';;
 import { ProfileUser } from 'app/models/user';
 import { ImageUploadService } from 'app/services/image-upload.service';
 import { UsersService } from 'app/services/user-services.service';
-@UntilDestroy()
+import { AuthenticationService } from 'app/services/authentication.service';
+import { Firestore , collection, where, query, getDocs, doc, limit} from '@angular/fire/firestore';
+import { FileI } from 'app/models/file.interface';
+import { Validators} from "@angular/forms";
+import { LoginComponent } from 'app/login/login.component';
+import { User } from '@angular/fire/auth';
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css'],
+  styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  user$ = this.usersService.currentUserProfile$;
 
-  profileForm = new FormGroup({
-    uid: new FormControl(''),
-    displayName: new FormControl(''),
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    phone: new FormControl(''),
-    address: new FormControl(''),
-  });
 
-  constructor(
+  public currentImage = 'https://picsum.photos/id/113/150/150';
+  user$ = this.authService.currentUser$;
+  public data:any=[]
+  public cu:any;
+  
+  constructor(private authService: AuthenticationService,
+    private firestore:Firestore,
     private imageUploadService: ImageUploadService,
     private toast: HotToastService,
-    private usersService: UsersService
-  ) {}
-
+    private usersService: UsersService,
+   
+    ) {
+   
+  }
+  email = localStorage.getItem('what');
   ngOnInit(): void {
-    this.usersService.currentUserProfile$
-      .pipe(untilDestroyed(this), tap(console.log))
-      .subscribe((user) => {
-        this.profileForm.patchValue({ ...user });
-      });
+    
+    this.getCurrentUser(this.email)
+  }
+  async getCurrentUser(email:any) {
+    
+
+    const cuRef = collection(this.firestore, 'users')
+    const q = query(cuRef, where("email", "==", email), limit(1))
+    const querySnapshot = await getDocs(q).then((response) => {
+      this.cu= [...response.docs.map((item) =>{
+        return {...item.data(), id: item.id}
+      })]
+      
+     })
+   
+     
+    
+
+    
   }
 
-  uploadFile(event: any, { uid }: ProfileUser) {
+  uploadFile(event: any, user: User) {
     this.imageUploadService
-      .uploadImage(event.target.files[0], `images/profile/${uid}`)
+      .uploadImage(event.target.files[0], `images/profile/${user.uid}`)
       .pipe(
         this.toast.observe({
           loading: 'Uploading profile image...',
           success: 'Image uploaded successfully',
           error: 'There was an error in uploading the image',
         }),
-        switchMap((photoURL) =>
+        concatMap((photoURL) =>
           this.usersService.updateUser({
-            uid,
             photoURL,
+            uid: ''
           })
         )
       )
       .subscribe();
   }
 
- saveProfile() {
-   // const profileData = this.profileForm.value;
-    //this.usersService
-      //.updateUser(profileData)
-      //.pipe(
-        //this.toast.observe({
-          //loading: 'Saving profile data...',
-          //success: 'Profile updated successfully',
-          //error: 'There was an error in updating the profile',
-        //})
-      //)
-      //.subscribe();
-  }
+  private initValuesForm(user: ProfileUser): void {
+    if (user.photoURL) {
+      this.currentImage = user.photoURL;
+    }
+
+
+
+}
 }

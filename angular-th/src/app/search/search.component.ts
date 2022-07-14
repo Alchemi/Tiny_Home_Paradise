@@ -8,18 +8,28 @@ import { Component, OnInit, EventEmitter, Output, ViewEncapsulation } from '@ang
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
 
+   }
+   search:any = localStorage.getItem('search')
   ngOnInit(): void {
+    if(localStorage.getItem('search')){
+      this.enteredZipcode = this.search;
+      localStorage.removeItem('search');
+      this.onSearchZipcodeChanged()
+        
+    }
+    else{}
   }
-  enteredZipcode:string ='';
-  enteredMinPrice:number=0;
-  enteredMaxPrice:number=0;
-  enteredMinSize:number=0;
-  enteredMaxSize:number=0;
+  enteredZipcode:any ='';
+  enteredMinPrice:any='';
+  enteredMaxPrice:any='';
+  enteredMinSize:any='';
+  enteredMaxSize:any='';
   enteredBedroom:number=0;
   enteredBathroom:number=0;
   enteredKeyword:string='';
+  enteredMobility:string='';
 
   @Output()
   searchZipcodeChanged : EventEmitter<string> = new EventEmitter<string>();
@@ -37,6 +47,8 @@ export class SearchComponent implements OnInit {
   searchBathChanged: EventEmitter<number> = new EventEmitter<number>();
   @Output()
   searchKeywordChanged: EventEmitter<string> = new EventEmitter<string>();
+  @Output()
+  searchMobilityChanged: EventEmitter<string> = new EventEmitter<string>();
   onSearchKeywordChanged(){
     this.searchKeywordChanged.emit(this.enteredKeyword);
   }
@@ -60,6 +72,9 @@ export class SearchComponent implements OnInit {
   }
   onBathChanged(){
     this.searchBathChanged.emit(this.enteredBathroom);
+  }
+  onMobilityChanged(){
+    this.searchMobilityChanged.emit(this.enteredMobility);
   }
 
 }

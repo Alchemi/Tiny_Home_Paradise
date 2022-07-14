@@ -1,0 +1,23 @@
+.success{
+    align-content: center;
+    padding: 0px 0;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+}
+.button{
+    padding: 0px 0;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    background-image: url('https://discordapp.com/channels/@me/969388028453847191/996936681880043610');
+    height: 100px;
+    background-position: center top;
+    background-size: cover;
+}
+.about-banner{
+    padding: 0px 0;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+}

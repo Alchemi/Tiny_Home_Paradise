@@ -3,24 +3,27 @@
     <use href="./assets/icons.svg#icon-chevron-small-left"></use>
     </svg>
     </a>
-    <div class= "info_image" 
-    [ngClass]="animationElement" 
-    #image 
-    ng-Style="(ui.getOpenState() | async) === 'closed' && {display:none}"
-    >
 
-    <img src="{{imageUrl }}" alt=" " />
+    <div class= "info-image" *ngFor=" let product of property">
+    <img width ="50" height="50" src="{{ product?.imageUrl }}" alt=" " />
     </div>
-    <div class = "property_info" [ngClass]="animationElement" #info >
-    <h4 class="heading-4">{{location }}</h4>
-    <span class="type"> {{ house_name }}</span>
+    <div class = "property-info" *ngFor=" let product of property">
+    <h4 class="heading-4">{{ product?.location }}</h4>
+    <span class="type"> {{ product?.house_name }}</span>
     <div class= "more ">
-    <span>{{ rooms }}</span>
-    <span>{{ baths }}</span>
-    <span> {{ size }}sq ft</span>
-    <span> {{ year }}</span>
-    <span> {{ mobility }}</span>
+    <span>Bedrooms: {{ product.rooms }}</span>
+    <br>
+    <span>Bathrooms: {{ product.baths }}</span>
+    <br>
+    <span>Size: {{ product.size }}sq ft</span>
+    <br>
+    <span>Built in: {{ product.year }}</span>
+    <br>
+    <span>Mobile: {{ product.mobility }}</span>
+    <br>
     </div>
-    <span class="price">${{ price }}</span>
+    <span class="price">Price: ${{ product.price }}</span>
     </div>
-    <button class = "call " #call>Contact Seller</button>
+    <br>
+    <button class = "call ">Contact Seller</button>
+
